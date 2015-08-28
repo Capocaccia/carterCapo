@@ -1,0 +1,40 @@
+.h1Tag {
+  font-family: 'Arizonia', Helvetica, sans-serif;
+  font-size: 4em;
+  text-align: center;
+  margin-top: 50px;
+
+}
+
+.equals {
+  font-family: 'Arizonia', Helvetica, sans-serif;
+  font-size: 4em;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.function {
+  font-family: 'Arizonia', Helvetica, sans-serif;
+  font-size: 4em;
+  text-align: center;
+}
+
+.execute {
+  font-family: 'Arizonia', Helvetica, sans-serif;
+  font-size: 5em;
+  text-align: center;
+}
+
+.headshot {
+  border: 1px solid red;
+  border-radius: 100px;
+  height: 500px;
+  width: 500px;
+}
+
+.aboutMe {
+  border: 1px solid red;
+  border-radius: 100px;
+  height: 500px;
+  width: 500px;
+}
