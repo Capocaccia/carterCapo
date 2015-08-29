@@ -1,25 +1,29 @@
 .h1Tag {
-  font-family: 'Arizonia', Helvetica, sans-serif;
+  font-family: 'Inconsolata', Helvetica, sans-serif;
   font-size: 4em;
   text-align: center;
   margin-top: 50px;
 }
 
 .equals {
-  font-family: 'Arizonia', Helvetica, sans-serif;
+  font-family: 'Inconsolata', Helvetica, sans-serif;
   font-size: 4em;
   text-align: center;
   margin-top: 50px;
 }
 
 .function {
-  font-family: 'Arizonia', Helvetica, sans-serif;
+  font-family: 'Inconsolata', Helvetica, sans-serif;
   font-size: 4em;
   text-align: center;
 }
 
+.functionHr {
+  margin-top: 0;
+}
+
 .execute {
-  font-family: 'Arizonia', Helvetica, sans-serif;
+  font-family: 'Inconsolata', Helvetica, sans-serif;
   font-size: 5em;
   text-align: center;
 }
@@ -39,7 +43,7 @@
 }
 
 .headlineContainer {
-
+  background-color: #F4F4F4;
 }
 
 .navItem {
@@ -80,7 +84,7 @@
 #twitterIcon {
   height: 75px;
   width: 75px;
-  margin: 5px 5px 0 5px
+  margin: 5px 5px 0 5px;
 }
 
 #githubIcon {
@@ -92,5 +96,14 @@
 #webDevIcon {
   height: 75px;
   width: 75px;
-  margin: 5px 5px 0 0;
+  margin: 15px 5px 0 0;
+  vertical-align: middle;
+}
+
+.navHref {
+  color: #252E38;
+}
+
+.webdevContainer {
+  margin-top: ;
 }
