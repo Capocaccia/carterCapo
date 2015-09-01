@@ -30,7 +30,6 @@
 .carterBlue {
   max-width: 100%;
   margin-left: 5px;
-  margin-right: 5px;
 }
 
 .carterCapocacciaHeader {
@@ -51,8 +50,7 @@
 }
 
 .headshot {
-  border: 1px solid red;
-  border-radius: 100px;
+
 }
 
 .aboutMe {
@@ -164,6 +162,11 @@
   width: 53.750px;
 }
 
+#mongoIcon {
+  height: 53.750px;
+  width: 53.750px;
+}
+
 #nodeIcon {
   height: 53.750px;
   width: 53.750px;
@@ -194,6 +197,17 @@
   bottom: 0;
 }
 
-.devicons {
-  font-family: 'devicons';
+.gallery {
+  border: 1px solid red;
+  height: 250px;
+  width: 250px;
+}
+
+.galleryHeadlineContainer {
+  text-align: center;
+}
+
+#galleryHeadline {
+  font-family: 'Inconsolata', Helvetica, sans-serif;
+  text-align: center;
 }
