@@ -137,8 +137,21 @@
   list-style: none;
 }
 
+#toolbox {
+  max-width: 100%;
+}
+
 .toolboxListItem {
   display: inline;
+}
+
+.toolboxContainer {
+  background-color: #F4F4F4;
+  border-radius: 2%;
+}
+
+.textToolList {
+  text-align: center;
 }
 
 #jsIcon {
@@ -161,6 +174,16 @@
   width: 53.750px;
 }
 
+#phaserIcon {
+  height: 53.750px;
+  width: 53.750px;
+}
+
+#html5Icon {
+  height: 53.750px;
+  width: 53.750px;
+}
+
 .headshot {
   text-align: center;
 }
@@ -169,4 +192,8 @@
   margin-top: 10px;
   text-align: center;
   bottom: 0;
+}
+
+.devicons {
+  font-family: 'devicons';
 }
