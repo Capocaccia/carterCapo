@@ -7,15 +7,34 @@
 
 .equals {
   font-family: 'Inconsolata', Helvetica, sans-serif;
-  font-size: 4em;
+  font-size: 5em;
   text-align: center;
+}
+
+.equalsContainer {
+  padding: 5px;
   margin-top: 50px;
 }
 
 .function {
   font-family: 'Inconsolata', Helvetica, sans-serif;
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
+}
+
+.functionContainer {
+  margin-top: 50px;
+  vertical-align: center;
+}
+
+.carterBlue {
+  max-width: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.carterCapocacciaHeader {
+  margin-top: 5px;
 }
 
 .functionHr {
@@ -25,21 +44,27 @@
 .execute {
   font-family: 'Inconsolata', Helvetica, sans-serif;
   font-size: 5em;
+}
+
+.executeContainer {
   text-align: center;
 }
 
 .headshot {
   border: 1px solid red;
   border-radius: 100px;
-  height: 500px;
-  width: 500px;
 }
 
 .aboutMe {
-  border: 1px solid red;
+  font-family: 'Inconsolata', Helvetica, sans-serif;
   border-radius: 100px;
-  height: 500px;
-  width: 500px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.aboutMeContainer{
+  background-color: #F4F4F4;
+  border-radius: 2%;
 }
 
 .headlineContainer {
@@ -52,10 +77,14 @@
 }
 
 .navList {
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 0;
   text-align: right;
   color: white;
-  font-size: 1em;
+}
+
+.navListContainer {
+  margin-top: 10px;
 }
 
 .navItemContainer {
@@ -63,47 +92,81 @@
   border-bottom:5px solid #3498DB;
 }
 
-#navCarter {
-  font-size: 1em;
-  text-align: left;
-  color: white;
-}
-
 #stravaIcon {
-  height: 75px;
-  width: 75px;
-  margin: 5px 5px 0 5px
+  height: 50px;
+  width: 50px;
+  margin: 0 5px 0 5px
 }
 
 #linkedInIcon {
-  height: 75px;
-  width: 75px;
-  margin: 5px 5px 0 5px
+  height: 50px;
+  width: 50px;
+  margin: 0 5px 0 5px
 }
 
 #twitterIcon {
-  height: 75px;
-  width: 75px;
-  margin: 5px 5px 0 5px;
+  height: 50px;
+  width: 50px;
+  margin: 0 5px 0 5px;
 }
 
 #githubIcon {
-  height: 75px;
-  width: 75px;
-  margin: 5px 5px 0 0
+  height: 50px;
+  width: 50px;
+  margin: 0 5px 0 0
 }
 
-#webDevIcon {
-  height: 75px;
-  width: 75px;
-  margin: 15px 5px 0 0;
-  vertical-align: middle;
+#emailIcon {
+  height: 50px;
+  width: 50px;
 }
 
 .navHref {
   color: #252E38;
 }
 
-.webdevContainer {
-  margin-top: ;
+.h1Container {
+  margin-right: 0;
+}
+
+.toolboxIconContainer {
+  text-align: center;
+}
+
+#toolboxList {
+  list-style: none;
+}
+
+.toolboxListItem {
+  display: inline;
+}
+
+#jsIcon {
+  height: 53.750px;
+  width: 53.750px;
+}
+
+#jqueryIcon {
+  height: 53.750px;
+  width: 53.750px;
+}
+
+#nodeIcon {
+  height: 53.750px;
+  width: 53.750px;
+}
+
+#githubIcon2 {
+  height: 53.750px;
+  width: 53.750px;
+}
+
+.headshot {
+  text-align: center;
+}
+
+.footer {
+  margin-top: 10px;
+  text-align: center;
+  bottom: 0;
 }
