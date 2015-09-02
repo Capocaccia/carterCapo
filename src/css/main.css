@@ -1,24 +1,30 @@
 .h1Tag {
-  font-family: 'Inconsolata', Helvetica, sans-serif;
+  /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
+  font-family: 'Rokkitt', serif;
   font-size: 4em;
   text-align: center;
-  margin-top: 50px;
+}
+
+.headlineContainer {
+  background-color: #F4F4F4;
+  height: auto;
 }
 
 .equals {
-  font-family: 'Inconsolata', Helvetica, sans-serif;
+  /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
+  font-family: 'Rokkitt', serif;
   font-size: 5em;
   text-align: center;
 }
 
 .equalsContainer {
-  padding: 5px;
   margin-top: 50px;
 }
 
 .function {
-  font-family: 'Inconsolata', Helvetica, sans-serif;
-  font-size: 3em;
+  /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
+  font-family: 'Rokkitt', serif;
+  font-size: 2.75em;
   text-align: center;
 }
 
@@ -29,11 +35,11 @@
 
 .carterBlue {
   max-width: 100%;
-  margin-left: 5px;
 }
 
 .carterCapocacciaHeader {
-  margin-top: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .functionHr {
@@ -41,23 +47,30 @@
 }
 
 .execute {
-  font-family: 'Inconsolata', Helvetica, sans-serif;
-  font-size: 5em;
+/*  font-family: 'Inconsolata', Helvetica, sans-serif;*/
+  font-family: 'Rokkitt', serif;
+/*  font-family: 'Source Code Pro', ;*/
+  font-size: 4.5em;
 }
 
 .executeContainer {
   text-align: center;
-}
-
-.headshot {
-
+  height: auto;
 }
 
 .aboutMe {
-  font-family: 'Inconsolata', Helvetica, sans-serif;
   border-radius: 100px;
   text-align: center;
   font-size: 1.5em;
+}
+
+#aboutMe {
+  /*  font-family: 'Inconsolata', Helvetica, sans-serif;*/
+/*  font-family: 'Source Code Pro', ;*/
+  /*font-family: 'Special Elite', cursive;*/
+/*  font-family: 'Signika Negative', sans-serif;*/
+  font-family: 'Slabo 27px', serif;
+  margin: 0 5px;
 }
 
 .aboutMeContainer{
@@ -65,27 +78,22 @@
   border-radius: 2%;
 }
 
-.headlineContainer {
-  background-color: #F4F4F4;
-}
-
 .navItem {
   display: inline;
-  text-align: right;
 }
 
 .navList {
-  margin-top: 15px;
-  margin-bottom: 0;
   text-align: right;
   color: white;
+  margin-bottom: 0;
 }
 
 .navListContainer {
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .navItemContainer {
+  height: auto;
   background-color: #252E38;
   border-bottom:5px solid #3498DB;
 }
@@ -111,7 +119,7 @@
 #githubIcon {
   height: 50px;
   width: 50px;
-  margin: 0 5px 0 0
+  margin: 0 5px 0 0;
 }
 
 #emailIcon {
@@ -124,7 +132,7 @@
 }
 
 .h1Container {
-  margin-right: 0;
+  margin-top: 50px;
 }
 
 .toolboxIconContainer {
@@ -148,8 +156,16 @@
   border-radius: 2%;
 }
 
+#myToolboxH3 {
+  font-family: 'Rokkitt', serif;
+}
+
 .textToolList {
   text-align: center;
+}
+
+.textToolListItem {
+  font-family: 'Slabo 27px', serif;
 }
 
 #jsIcon {
@@ -192,9 +208,25 @@
 }
 
 .footer {
-  margin-top: 10px;
+  margin-top: 20px;
+  height: auto;
   text-align: center;
   bottom: 0;
+  background-color: #F4F4F4;
+  border-top:5px solid #FF931E;
+}
+
+.footerTagline {
+  margin-top: 60px;
+  text-align: right;
+  vertical-align: middle;
+  font-family: 'Rokkitt', serif;
+}
+
+#footerCarterBlue {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-width: 100%;
 }
 
 .gallery {
@@ -208,6 +240,7 @@
 }
 
 #galleryHeadline {
-  font-family: 'Inconsolata', Helvetica, sans-serif;
+  /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
+  font-family: 'Rokkitt', serif;
   text-align: center;
 }
