@@ -208,7 +208,7 @@
 }
 
 .footer {
-  margin-top: 20px;
+  margin-top: 50px;
   height: auto;
   text-align: center;
   bottom: 0;
@@ -229,12 +229,6 @@
   max-width: 100%;
 }
 
-.gallery {
-  border: 1px solid red;
-  height: 250px;
-  width: 250px;
-}
-
 .galleryHeadlineContainer {
   text-align: center;
 }
@@ -243,4 +237,8 @@
   /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
   font-family: 'Rokkitt', serif;
   text-align: center;
+}
+
+.galleryImage {
+  max-width: 100%;
 }
