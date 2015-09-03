@@ -33,6 +33,10 @@
   vertical-align: center;
 }
 
+.functionHr {
+  margin-top: 0;
+}
+
 .carterBlue {
   max-width: 100%;
 }
@@ -40,10 +44,6 @@
 .carterCapocacciaHeader {
   margin-top: 30px;
   margin-bottom: 30px;
-}
-
-.functionHr {
-  margin-top: 0;
 }
 
 .execute {
@@ -88,8 +88,12 @@
   margin-bottom: 0;
 }
 
+.navHref {
+  color: #252E38;
+}
+
 .navListContainer {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .navItemContainer {
@@ -125,10 +129,6 @@
 #emailIcon {
   height: 50px;
   width: 50px;
-}
-
-.navHref {
-  color: #252E38;
 }
 
 .h1Container {
@@ -217,7 +217,7 @@
 }
 
 .footerTagline {
-  margin-top: 60px;
+  margin-top: 45px;
   text-align: right;
   vertical-align: middle;
   font-family: 'Rokkitt', serif;
