@@ -242,3 +242,8 @@
 .galleryImage {
   max-width: 100%;
 }
+
+.img-title {
+  text-align: center;
+  font-family: 'Slabo 27px', serif;
+}
