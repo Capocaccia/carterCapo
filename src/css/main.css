@@ -2,6 +2,10 @@
   /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
   font-family: 'Rokkitt', serif;
   font-size: 4em;
+}
+
+.h1Container {
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -14,23 +18,22 @@
   /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
   font-family: 'Rokkitt', serif;
   font-size: 5em;
-  text-align: center;
 }
 
 .equalsContainer {
-  margin-top: 50px;
+  margin-top: 40px;
+  text-align: center;
 }
 
 .function {
   /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
   font-family: 'Rokkitt', serif;
   font-size: 2.75em;
-  text-align: center;
 }
 
 .functionContainer {
   margin-top: 50px;
-  vertical-align: center;
+  text-align: center;
 }
 
 .functionHr {
@@ -129,10 +132,6 @@
 #emailIcon {
   height: 50px;
   width: 50px;
-}
-
-.h1Container {
-  margin-top: 50px;
 }
 
 .toolboxIconContainer {
