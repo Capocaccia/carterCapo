@@ -1,5 +1,4 @@
 .h1Tag {
-  /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
   font-family: 'Rokkitt', serif;
   font-size: 4em;
 }
@@ -15,7 +14,6 @@
 }
 
 .equals {
-  /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
   font-family: 'Rokkitt', serif;
   font-size: 5em;
 }
@@ -26,7 +24,6 @@
 }
 
 .function {
-  /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
   font-family: 'Rokkitt', serif;
   font-size: 2.75em;
 }
@@ -50,9 +47,7 @@
 }
 
 .execute {
-/*  font-family: 'Inconsolata', Helvetica, sans-serif;*/
   font-family: 'Rokkitt', serif;
-/*  font-family: 'Source Code Pro', ;*/
   font-size: 4.5em;
 }
 
@@ -68,10 +63,6 @@
 }
 
 #aboutMe {
-  /*  font-family: 'Inconsolata', Helvetica, sans-serif;*/
-/*  font-family: 'Source Code Pro', ;*/
-  /*font-family: 'Special Elite', cursive;*/
-/*  font-family: 'Signika Negative', sans-serif;*/
   font-family: 'Slabo 27px', serif;
   margin: 0 5px;
 }
@@ -232,7 +223,6 @@
 }
 
 #galleryHeadline {
-  /*font-family: 'Inconsolata', Helvetica, sans-serif;*/
   font-family: 'Rokkitt', serif;
   text-align: center;
 }
