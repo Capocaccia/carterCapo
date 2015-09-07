@@ -96,30 +96,30 @@
   border-bottom:5px solid #3498DB;
 }
 
-#stravaIcon {
+.stravaIcon {
   height: 50px;
   width: 50px;
   margin: 0 5px 0 0
 }
 
-#linkedInIcon {
+.linkedInIcon {
   height: 50px;
   width: 50px;
   margin: 0 5px 0 5px
 }
 
-#twitterIcon {
+.twitterIcon {
   height: 50px;
   width: 50px;
   margin: 0 5px 0 5px;
 }
 
-#githubIcon {
+.githubIcon {
   height: 50px;
   width: 50px;
 }
 
-#emailIcon {
+.emailIcon {
   height: 50px;
   width: 50px;
 }
