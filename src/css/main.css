@@ -108,7 +108,7 @@
 #stravaIcon {
   height: 50px;
   width: 50px;
-  margin: 0 5px 0 5px
+  margin: 0 5px 0 0
 }
 
 #linkedInIcon {
@@ -126,7 +126,6 @@
 #githubIcon {
   height: 50px;
   width: 50px;
-  margin: 0 5px 0 0;
 }
 
 #emailIcon {
