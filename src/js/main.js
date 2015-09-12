@@ -6,3 +6,13 @@ $(document).ready( function() {
         $(this).find('.img-title').fadeOut(300);
     });
 });
+
+
+$(document).ready(function(){
+  var underscore = document.getElementById('underscore');
+
+    setInterval(function() {
+        var uStyle = underscore.style;
+        uStyle.visibility = (uStyle.visibility == 'visible') ? 'hidden' : 'visible';
+    }, 750);
+})
