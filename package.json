@@ -1,0 +1,29 @@
+{
+  "name": "cartercapo",
+  "version": "1.0.0",
+  "description": "portfolio site",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^1.2.0",
+    "node-sass": "^3.7.0",
+    "postcss-flexbugs-fixes": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Capocaccia/carterCapo.git"
+  },
+  "author": "Carter Capocaccia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Capocaccia/carterCapo/issues"
+  },
+  "homepage": "https://github.com/Capocaccia/carterCapo#readme"
+}
