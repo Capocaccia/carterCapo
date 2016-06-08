@@ -1,14 +1,22 @@
-$(document).ready( function() {
-    $(".img-title").hide();
-    $('.gallery-item').hover( function() {
-        $(this).find('.img-title').fadeIn(300);
-    }, function() {
-        $(this).find('.img-title').fadeOut(300);
-    });
-    var underscore = document.getElementById('underscore');
+let $header = $('.header');
+let $section = $('.section');
 
-    setInterval(function() {
-        var uStyle = underscore.style;
-        uStyle.visibility = (uStyle.visibility == 'visible') ? 'hidden' : 'visible';
-    }, 750);
+$('.header--h1').on('click', function(){
+    window.location = '/'
 });
+
+$section.click(function(){
+    let sectionTitle = $(this).children('p').html();
+    let location = sectionTitle.replace(/\s/g, '');
+    contentChange(location);
+});
+
+
+
+
+
+function contentChange(location){
+    $('.' + location).removeClass('hidden');
+    $header.siblings().not(document.getElementsByClassName(location)).addClass('hidden');
+};
+
