@@ -1,0 +1,61 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: $header-item-height;
+    &--h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 35%;
+        background-color: $quaternary-color;
+        text-transform: uppercase;
+        min-height: $header-item-height;
+        transition: $transition-time;
+        &:hover {
+            cursor: pointer;
+            background-color: darken($quaternary-color, 10%);
+        }
+        h1 {
+            margin: 0;
+            color: $black;
+            font: $primary-font;
+            font-size: 25px;
+        }
+    }
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: $header-item-height;
+    flex-basis: 21.6666666666666%;
+    background-color: $primary-color;
+    transition: $transition-time;
+    &:hover {
+        cursor: pointer;
+        background-color: lighten($primary-color, 10%);
+    }
+    &-secondary{
+        background-color: $secondary-color;
+        transition: $transition-time;
+        &:hover {
+            cursor: pointer;
+            background-color: darken($secondary-color, 10%);
+        }
+    }
+    &-tertiary{
+        background-color: $tertiary-color;
+        transition: $transition-time;
+        &:hover {
+            cursor: pointer;
+            background-color: darken($tertiary-color, 10%);
+        }
+    }
+    p {
+        color: $quaternary-color;
+        margin: 0;
+        text-transform: uppercase;
+    }
+}

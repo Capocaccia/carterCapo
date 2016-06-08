@@ -1,0 +1,24 @@
+.content {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+        color: $quaternary-color;
+        font-size: 22px;
+        position: relative;
+        &:after {
+            bottom: -10px;
+            content: '';
+            left: 75px;
+            height: 2px;
+            background-color: $secondary-color;
+            position: absolute;
+            width: 10%;
+        }
+    }
+    .tagline {
+        font-size: 16px;
+    }
+}
