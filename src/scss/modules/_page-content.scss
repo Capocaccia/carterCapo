@@ -1,9 +1,11 @@
 .content {
-    display: flex;
-    height: 100%;
+    height: 100vh;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     h2 {
         color: $quaternary-color;
         font-size: 22px;
