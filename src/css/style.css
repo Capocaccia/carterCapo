@@ -1,6 +1,3 @@
-.hidden {
-  display: none !important; }
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -35,16 +32,16 @@
   .section:hover {
     cursor: pointer;
     background-color: #1d2b4b; }
-  .section-secondary {
+  .section-second {
     background-color: #AB987A;
     transition: 0.3s; }
-    .section-secondary:hover {
+    .section-second:hover {
       cursor: pointer;
       background-color: #947f5e; }
-  .section-tertiary {
+  .section-third {
     background-color: #FF533D;
     transition: 0.3s; }
-    .section-tertiary:hover {
+    .section-third:hover {
       cursor: pointer;
       background-color: #ff260a; }
   .section p {
@@ -53,11 +50,13 @@
     text-transform: uppercase; }
 
 .content {
-  display: flex;
-  height: 100%;
+  height: 100vh;
   justify-content: center;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
   .content h2 {
     color: #F5F5F5;
     font-size: 22px;
