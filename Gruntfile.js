@@ -24,23 +24,24 @@ module.exports = function (grunt) {
                     browsers: ['last 4 version', 'ie 7', 'ie 8', 'ie 9'],
                     map: true
                 },
-                src: 'css/style.css'
+                src: 'src/css/style.css'
             }
         },
 
         watch: {
             css: {
-                files: ['scss/**/*.scss'],
+                files: ['src/scss/**/*.scss'],
                 tasks: ['sass', 'autoprefixer']
             },
-            twig: {
-                files: ['Site/Views/*.twig']
-            },
             js: {
-                files: ['jscripts/src/*.js']
+                files: ['src/jscripts/src/*.js']
             },
             options: {
-                spawn: false
+                livereload: {
+                    host: 'localhost',
+                    port: 1234
+                    ///livereload currently not working
+                }
             }
         },
         postcss: {
@@ -61,8 +62,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
     grunt.registerTask('style', ['sass', 'postcss']);
-
+    grunt.registerTask('default', ['watch']);
 };
