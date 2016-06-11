@@ -1,4 +1,6 @@
 .content {
+    display: none;
+    position: relative;
     height: 100vh;
     justify-content: center;
     flex-direction: column;
@@ -6,7 +8,17 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    &:after {
+        position: absolute;
+        top: 0;
+        content: '';
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba($primary-color, 0.7);
+    }
     h2 {
+        font-family: $primary-font;
+        z-index: 200;
         color: $quaternary-color;
         font-size: 22px;
         position: relative;
@@ -21,6 +33,9 @@
         }
     }
     .tagline {
+        font-family: $secondary-font;
+        color: $quaternary-color;
+        z-index: 200;
         font-size: 16px;
     }
 }

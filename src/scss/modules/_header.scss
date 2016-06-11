@@ -1,3 +1,6 @@
+body {
+    margin: 0;
+}
 .header {
     display: flex;
     justify-content: space-between;
@@ -19,7 +22,7 @@
         h1 {
             margin: 0;
             color: $black;
-            font: $primary-font;
+            font-family: $primary-font;
             font-size: 25px;
         }
     }
@@ -57,5 +60,6 @@
         color: $quaternary-color;
         margin: 0;
         text-transform: uppercase;
+        font-family: $primary-font;
     }
 }
