@@ -1,3 +1,6 @@
+body {
+  margin: 0; }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -18,7 +21,7 @@
     .header--h1 h1 {
       margin: 0;
       color: black;
-      font: Helvetica, sans-serif;
+      font-family: Sanchez, sans-serif;
       font-size: 25px; }
 
 .section {
@@ -47,9 +50,12 @@
   .section p {
     color: #F5F5F5;
     margin: 0;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-family: Sanchez, sans-serif; }
 
 .content {
+  display: none;
+  position: relative;
   height: 100vh;
   justify-content: center;
   flex-direction: column;
@@ -57,7 +63,16 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat; }
+  .content:after {
+    position: absolute;
+    top: 0;
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(15, 22, 38, 0.7); }
   .content h2 {
+    font-family: Sanchez, sans-serif;
+    z-index: 200;
     color: #F5F5F5;
     font-size: 22px;
     position: relative; }
@@ -70,6 +85,61 @@
       position: absolute;
       width: 10%; }
   .content .tagline {
+    font-family: Source Sans Pro, sans-serif;
+    color: #F5F5F5;
+    z-index: 200;
     font-size: 16px; }
+
+.content-items {
+  z-index: 200; }
+  .content-items .content-item {
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    min-height: 50px;
+    border: 3px solid #F5F5F5;
+    margin: 20px 0;
+    transition: 0.3s; }
+    .content-items .content-item:hover {
+      cursor: pointer;
+      border: 3px solid #c2c2c2;
+      transition: 0.3s; }
+    .content-items .content-item--question {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      color: #F5F5F5;
+      font-family: Sanchez, sans-serif;
+      font-size: 18px;
+      text-transform: uppercase;
+      text-align: center; }
+      .content-items .content-item--question:after {
+        content: '\25c0';
+        position: absolute;
+        right: -30px;
+        transform: rotate(0deg);
+        transition: 0.3s;
+        font-size: 15px;
+        color: #F5F5F5; }
+      .content-items .content-item--question.js_arrow_rotate:after {
+        content: '\25c0';
+        position: absolute;
+        transform: rotate(-90deg);
+        transition: 0.3s;
+        right: -30px;
+        font-size: 15px;
+        color: #F5F5F5; }
+    .content-items .content-item--answer {
+      display: none;
+      color: #F5F5F5;
+      font-family: Sanchez, sans-serif;
+      font-size: 16px;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 10px; }
 
 /*# sourceMappingURL=style.css.map */
