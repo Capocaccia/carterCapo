@@ -22,6 +22,8 @@
         color: $quaternary-color;
         font-size: 22px;
         position: relative;
+        width: 80vw;
+        text-align: center;
         &:after {
             bottom: -10px;
             content: '';
@@ -37,5 +39,7 @@
         color: $quaternary-color;
         z-index: 200;
         font-size: 16px;
+        width: 80vw;
+        text-align: center;
     }
 }

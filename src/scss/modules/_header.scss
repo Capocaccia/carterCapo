@@ -34,13 +34,43 @@ body {
     justify-content: center;
     min-height: $header-item-height;
     flex-basis: 21.6666666666666%;
-    background-color: $primary-color;
+    flex-grow: 1;
     transition: $transition-time;
-    &:hover {
-        cursor: pointer;
-        background-color: lighten($primary-color, 10%);
+    &:nth-of-type(1) {
+        flex-basis: 35%;
+        flex-grow: 1;
+        background-color: $quaternary-color;
+        &:hover {
+            cursor: pointer;
+            background-color: darken($quaternary-color, 10%)
+        }
+        p {
+            color: $primary-color;
+        }
+    }
+    &-first{
+        background-color: $tertiary-color;
+        transition: $transition-time;
+        p {
+            color: $primary-color;
+        }
+        &:hover {
+            cursor: pointer;
+            background-color: darken($tertiary-color, 10%);
+        }
     }
     &-second{
+        background-color: $primary-color;
+        transition: $transition-time;
+        &:hover {
+            cursor: pointer;
+            background-color: lighten($primary-color, 10%);
+        }
+        p {
+            color: $quaternary-color;
+        }
+    }
+    &-third{
         background-color: $secondary-color;
         transition: $transition-time;
         &:hover {
@@ -48,18 +78,10 @@ body {
             background-color: darken($secondary-color, 10%);
         }
     }
-    &-third{
-        background-color: $tertiary-color;
-        transition: $transition-time;
-        &:hover {
-            cursor: pointer;
-            background-color: darken($tertiary-color, 10%);
-        }
-    }
     p {
-        color: $quaternary-color;
         margin: 0;
         text-transform: uppercase;
         font-family: $primary-font;
+        font-size: 20px;
     }
 }
