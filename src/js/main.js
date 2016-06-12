@@ -1,15 +1,59 @@
 let contentBlocks = $('.content');
 let $header = $('.header');
-let $home = $('.header--h1');
-let sections = ['Contact', 'About', 'Projects'];
-let stylingClasses = ['section-first', 'section-second', 'section-third'];
-let backgrounds = ['src/images/car.jpeg', 'src/images/cliffs.jpeg', 'src/images/wave.jpeg'];
-let questions = ['Who am I?', 'You make websites?  What languages do you use?', 'How did you start writing code?', 'How do you pronounce your last name?', 'What are your hobbies?'];
-let answers = ['I am a web developer, Memphian, Ole Miss Rebel, and avid cyclist.',
-    'Yes I do!  I use PHP, Twig, JavaScript, jQuery, HTML5, SASS, Mongo, Node, GitHub, Grunt, NPM, Bower and more!',
-    'From hobby to job.  I graduated from Nashville Software School then dove into a career with a web agency in Memphis.',
-    'cap-O-coch-E.  You can ask me again later. its ok.',
-    'Lots. Writing code, cycling with the Memphis Hightailers, CounterStrike, Cooking, Firearms, My dog Doug, Fishing'];
+let sections = {
+    section_1: {
+        title :'Carter Capocaccia',
+        tagline: 'Welcome!  I am Carter Capocaccia. I\'m a passionate web developer learning more every day. Technology gives me inspirations to improve the world around me.',
+        stylingClasses: 'section-home'
+    },
+
+    section_2: {
+        title: 'About',
+        tagline: 'Allow me to re-introduce myself.',
+        stylingClasses: 'section-second',
+        background: 'src/images/cliffs.jpeg',
+        contentMount: '<div></div>',
+        contentClass: 'qa'
+    },
+    section_3: {
+        title: 'Projects',
+        tagline: 'Here is some of my work',
+        stylingClasses: 'section-third',
+        background: 'src/images/wave.jpeg',
+        contentMount: '<div></div>',
+        contentClass: 'project'
+    },
+    section_4: {
+        title :'Contact',
+        tagline: 'Lets Connect',
+        stylingClasses: 'section-first',
+        background: 'src/images/car.jpeg'
+    }
+};
+
+let qa = {
+    item_1: {
+        question: 'Who am I?',
+        answer: 'I am a web developer, Memphian, Ole Miss Rebel, and avid cyclist.'
+    },
+    item_2: {
+        question: 'You make websites?  What languages do you use?',
+        answer: 'Yes I do!  I use PHP, Twig, JavaScript, jQuery, HTML5, SASS, Mongo, Node, GitHub, Grunt, NPM, Bower and more!'
+    },
+    item_3: {
+        question: 'How did you start writing code?',
+        answer: 'From hobby to job.  I graduated from Nashville Software School and dove into a career with a web agency in Memphis.'
+    },
+    item_4: {
+        question: 'How do you pronounce your last name?',
+        answer: 'cap-O-coch-E.  You can ask me again later. its ok.'
+    },
+    item_5: {
+        question: 'What are your hobbies?',
+        answer: 'Lots. Writing code, cycling with the Memphis Hightailers, CounterStrike, Cooking, Firearms, My dog Doug, Fishing'
+    }
+};
+
 
 let projects = {
     project: {
@@ -32,6 +76,24 @@ let projects = {
     }
 };
 
+$('.home').css('display', 'flex');
+
+
+//build sections and content mount points
+for(var section in sections){
+    var obj = sections[section];
+    var sectionClass = 'section ';
+    var classes = sectionClass.concat(obj.title);
+    $('<div class=\''+ classes + ' ' + obj.stylingClasses + '\'><p class="title">' + obj.title + '</p></div>').appendTo('.header');
+    $( contentBlocks ).css('background-image', 'url(' + obj.background + ')');
+    //todo: get background images working;
+    $('<div class="content"><h2>' + obj.title + '</h2><p class="tagline">' + obj.tagline + '</p></div>').addClass(obj.title).css('background-image', obj.background).appendTo('body');
+    if(obj.contentMount){
+        $(obj.contentMount).addClass(obj.contentClass).appendTo('.content:last');
+    }
+}
+
+//builds projects
 for(var project in projects){
     if (!projects.hasOwnProperty(project)) continue;
     var obj = projects[project];
@@ -42,28 +104,15 @@ for(var project in projects){
     $('.project--item__link:last').children('img').attr('src', obj.image);
 }
 
-
-$('.home').css('display', 'flex');
-
-for(var i = 0; i < sections.length; i++) {
-    var section = sections[i];
-    var sectionClass = 'section ';
-    var classes = sectionClass.concat(section);
-    $('.header--h1').after('<div class=\''+ classes + ' ' + stylingClasses[i] + '\'><p class="title">' + sections[i] + '</p></div>');
-}
-
-for(var i = 0; i < backgrounds.length; i++){
-    $( contentBlocks[i + 1] ).css('background-image', 'url(' + backgrounds[i] + ')');
-}
-
-
-for(var i = 0; i < questions.length; i++){
-    $('<div class="content-item"><div class="content-item--question"></div><div class="content-item--answer"></div></div>').appendTo('.content-items');
-    $('.content-item--question:last').html(questions[i]);
-    $('.content-item--answer:last').html(answers[i]);
+//builds qa items
+for(var qaItem in qa){
+    var obj = qa[qaItem];
+    $('<div class="content-item"><div class="content-item--question"></div><div class="content-item--answer"></div></div>').appendTo('.qa');
+    $('.content-item--question:last').html(obj.question);
+    $('.content-item--answer:last').html(obj.answer);
 };
 
-
+//handles animations of qa items
 $('.content-item').on('click', function(){
     $(this).children('.content-item--answer').slideToggle();
     $(this).children('.content-item--question').toggleClass('js_arrow_rotate');
@@ -71,12 +120,14 @@ $('.content-item').on('click', function(){
 
 let $section = $('.section');
 
+//gets section data for hiding and showing page contents
 $section.click(function(){
     let sectionTitle = $(this).children('p').html();
     let location = sectionTitle.replace(/\s/g, '');
     contentChange(location);
 });
 
+//hides and shows page contents
 function contentChange(location){
     $('.' + location).removeClass('hidden').css('display', 'flex');
     $header.siblings().not(document.getElementsByClassName(location)).css('display', 'none');
