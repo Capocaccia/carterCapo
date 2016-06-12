@@ -6,7 +6,16 @@ module.exports = function (grunt) {
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
-
+        browserSync: {
+            bsFiles: {
+                src : 'src/scss/*.scss',
+            },
+            options: {
+                server: {
+                    baseDir: "./"
+                }
+            }
+        },
         sass: {
             options: {
                 sourceMap: true
@@ -35,13 +44,6 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ['src/jscripts/src/*.js']
-            },
-            options: {
-                livereload: {
-                    host: 'localhost',
-                    port: 1234
-                    ///livereload currently not working
-                }
             }
         },
         postcss: {
