@@ -117,7 +117,7 @@ body {
     .content .tagline:after {
       content: '';
       height: 2px;
-      background-color: #AB987A;
+      background-color: #F5F5F5;
       position: absolute;
       width: 10vw;
       left: 44%;
@@ -146,9 +146,9 @@ body {
     margin: 20px 0;
     transition: 0.3s; }
     .qa .content-item:hover {
-      cursor: pointer;
-      border: 3px solid #c2c2c2;
-      transition: 0.3s; }
+      cursor: pointer; }
+      .qa .content-item:hover .content-item--question:after {
+        color: #0F1626; }
     .qa .content-item--question {
       position: relative;
       display: -webkit-flex;
@@ -227,11 +227,15 @@ body {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
+    .project--item:hover .project--item__title {
+      color: #AB987A;
+      transition: 0.3s; }
     .project--item__title {
       color: #F5F5F5;
       font-family: Sanchez, sans-serif;
       text-transform: uppercase;
-      font-size: 20px; }
+      font-size: 20px;
+      transition: 0.3s; }
     .project--item__description {
       color: #F5F5F5;
       font-family: Source Sans Pro, sans-serif;
@@ -269,7 +273,13 @@ body {
             flex-direction: column;
     -webkit-align-items: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
+    -webkit-flex-grow: 5;
+        -ms-flex-positive: 5;
+            flex-grow: 5; }
     .contact .contactItem p {
       transition: 0.3s;
       text-transform: uppercase;

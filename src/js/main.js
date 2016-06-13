@@ -61,7 +61,7 @@ let qa = {
 let projects = {
     project: {
         title: 'CloudRunner',
-        description: 'A Phaser.JS Game',
+        description: 'A browser game made with the Phaser.JS framework',
         link: 'http://capocaccia.github.io/CloudRunner/',
         image: 'src/images/crun.png'
     },

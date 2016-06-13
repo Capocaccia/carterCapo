@@ -11,11 +11,14 @@
         min-height: 50px;
         border: 3px solid $quaternary-color;
         margin: 20px 0;
-        transition: 0.3s;
+        transition: $transition-time;
         &:hover {
             cursor: pointer;
-            border: 3px solid darken($quaternary-color, 20%);
-            transition: 0.3s;
+            .content-item--question {
+                &:after {
+                    color: $primary-color;
+                }
+            }
         }
         &--question {
             position: relative;
@@ -31,7 +34,7 @@
                 position: absolute;
                 right: -30px;
                 transform: rotate(0deg);
-                transition: 0.3s;
+                transition: $transition-time;
                 font-size: 15px;
                 color: $quaternary-color;
             }
@@ -40,7 +43,7 @@
                     content: '\25c0';
                     position: absolute;
                     transform: rotate(-90deg);
-                    transition: 0.3s;
+                    transition: $transition-time;
                     right: -30px;
                     font-size: 15px;
                     color: $quaternary-color;

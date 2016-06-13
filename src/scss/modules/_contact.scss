@@ -8,6 +8,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        flex-basis: 25%;
+        flex-grow: 5;
         p {
             transition: 0.3s;
             text-transform: uppercase;
