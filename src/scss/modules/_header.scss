@@ -6,26 +6,6 @@ body {
     justify-content: space-between;
     align-items: center;
     min-height: $header-item-height;
-    &--h1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-basis: 35%;
-        background-color: $quaternary-color;
-        text-transform: uppercase;
-        min-height: $header-item-height;
-        transition: $transition-time;
-        &:hover {
-            cursor: pointer;
-            background-color: darken($quaternary-color, 10%);
-        }
-        h1 {
-            margin: 0;
-            color: $black;
-            font-family: $primary-font;
-            font-size: 25px;
-        }
-    }
 }
 
 .section {
@@ -52,7 +32,7 @@ body {
         background-color: $tertiary-color;
         transition: $transition-time;
         p {
-            color: $primary-color;
+            color: $quaternary-color;
         }
         &:hover {
             cursor: pointer;
@@ -76,6 +56,9 @@ body {
         &:hover {
             cursor: pointer;
             background-color: darken($secondary-color, 10%);
+        }
+        p {
+            color: $quaternary-color;
         }
     }
     p {

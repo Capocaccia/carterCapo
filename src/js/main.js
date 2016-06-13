@@ -17,17 +17,20 @@ let sections = {
     },
     section_3: {
         title: 'Projects',
-        tagline: 'Here is some of my work',
+        tagline: 'Here is some of my work:',
         stylingClasses: 'section-third',
         background: 'src/images/wave.jpeg',
         contentMount: '<div></div>',
         contentClass: 'project'
     },
     section_4: {
-        title :'Contact',
-        tagline: 'Lets Connect',
+        title :'Connect',
+        tagline: 'I can tell that we are gonna be friends.',
         stylingClasses: 'section-first',
-        background: 'src/images/car.jpeg'
+        background: 'src/images/car.jpeg',
+        contentMount: '<div></div>',
+        contentClass: 'contact'
+
     }
 };
 
@@ -60,19 +63,48 @@ let projects = {
         title: 'CloudRunner',
         description: 'A Phaser.JS Game',
         link: 'http://capocaccia.github.io/CloudRunner/',
-        image: 'src/css/images/crun.png'
+        image: 'src/images/crun.png'
     },
     project_1: {
         title: 'Carterpedia',
         description: 'A Wikipedia Mockup using the Skeleton CSS Framework',
         link: 'http://capocaccia.github.io/Carterpedia/',
-        image: 'src/css/images/carterpedia.png'
+        image: 'src/images/carterpedia.png'
     },
     project_2: {
         title: 'Bike Nash',
         description: 'A Cycling Blog for Nashville Cyclists (No longer live)',
         link: 'https://github.com/Capocaccia/bikeNash',
-        image: 'src/css/images/bikeNash.png'
+        image: 'src/images/bikeNash.png'
+    },
+    project_3: {
+        title: 'Cartercapo.com',
+        description: 'This website is dynamically built using JSON Objects, JavaScript, and jQuery.',
+        link: 'https://github.com/Capocaccia/carterCapo',
+        image: 'src/images/github.svg'
+    }
+};
+
+let contactItems = {
+    item_1: {
+        title: 'Email',
+        link: 'carter.capocaccia@gmail.com',
+        icon: 'src/images/email.svg'
+    },
+    item_2: {
+        title: 'LinkedIn',
+        link: 'https://www.linkedin.com/in/capocaccia',
+        icon: 'src/images/linkedin.svg'
+    },
+    item_3: {
+        title: 'GitHub',
+        link: 'https://github.com/Capocaccia',
+        icon: 'src/images/github.svg'
+    },
+    item_4: {
+        title: 'Strava',
+        link: 'https://www.strava.com/athletes/1624324',
+        icon: 'src/images/strava.svg'
     }
 };
 
@@ -117,6 +149,19 @@ $('.content-item').on('click', function(){
     $(this).children('.content-item--answer').slideToggle();
     $(this).children('.content-item--question').toggleClass('js_arrow_rotate');
 });
+
+//builds contact items
+for(var contactItem in contactItems){
+    var obj = contactItems[contactItem];
+    var re = /\S+@\S+\.\S+/;
+    var email = re.test(obj.link);
+    if(email){
+        let linkhref = 'mailto:';
+        $('<div class="contactItem"><p class="title">'+ obj.title +'</p><a class="project--item__link" href="' + linkhref + obj.link +'"><img src="' + obj.icon + '" alt="' + obj.title + '"></a></div>').appendTo('.contact');
+    } else {
+        $('<div class="contactItem"><p class="title">'+ obj.title +'</p><a class="project--item__link" target=_blank href="' + obj.link +'"><img src="' + obj.icon + '" alt="' + obj.title + '"></a></div>').appendTo('.contact');
+    }
+}
 
 let $section = $('.section');
 

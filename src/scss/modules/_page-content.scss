@@ -2,7 +2,7 @@
     display: none;
     position: relative;
     height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     background-size: cover;
@@ -17,22 +17,14 @@
         background-color: rgba($primary-color, 0.7);
     }
     h2 {
+        padding-top: 50px;
         font-family: $primary-font;
         z-index: 200;
         color: $quaternary-color;
         font-size: 22px;
-        position: relative;
         width: 80vw;
         text-align: center;
-        &:after {
-            bottom: -10px;
-            content: '';
-            left: 75px;
-            height: 2px;
-            background-color: $secondary-color;
-            position: absolute;
-            width: 10%;
-        }
+        margin: 15px 0;
     }
     .tagline {
         font-family: $secondary-font;
@@ -41,5 +33,15 @@
         font-size: 16px;
         width: 80vw;
         text-align: center;
+        position: relative;
+        &:after {
+            content: '';
+            height: 2px;
+            background-color: $secondary-color;
+            position: absolute;
+            width: 10vw;
+            left: 44%;
+            top: -15px;
+        }
     }
 }
