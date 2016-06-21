@@ -1,12 +1,13 @@
 let contentBlocks = $('.content');
 let $header = $('.header');
+$('.home').css('display', 'flex');
+
 let sections = {
     section_1: {
         title :'Carter Capocaccia',
         tagline: 'Welcome!  I am Carter Capocaccia. I\'m a passionate web developer learning more every day. Technology gives me inspirations to improve the world around me.',
         stylingClasses: 'section-home'
     },
-
     section_2: {
         title: 'About',
         tagline: 'Allow me to re-introduce myself.',
@@ -108,18 +109,14 @@ let contactItems = {
     }
 };
 
-$('.home').css('display', 'flex');
-
-
 //build sections and content mount points
 for(var section in sections){
     var obj = sections[section];
     var sectionClass = 'section ';
     var classes = sectionClass.concat(obj.title);
     $('<div class=\''+ classes + ' ' + obj.stylingClasses + '\'><p class="title">' + obj.title + '</p></div>').appendTo('.header');
-    $( contentBlocks ).css('background-image', 'url(' + obj.background + ')');
-    //todo: get background images working;
     $('<div class="content"><h2>' + obj.title + '</h2><p class="tagline">' + obj.tagline + '</p></div>').addClass(obj.title).css('background-image', obj.background).appendTo('body');
+    $('.content:last').css('background-image', 'url(' + obj.background + ')');
     if(obj.contentMount){
         $(obj.contentMount).addClass(obj.contentClass).appendTo('.content:last');
     }
@@ -143,6 +140,23 @@ for(var qaItem in qa){
     $('.content-item--question:last').html(obj.question);
     $('.content-item--answer:last').html(obj.answer);
 };
+
+//builds singular qa item
+//todo: need to fine tune building of new questions and styling
+let userQa = {};
+function buildQaItem(question, answer){
+    let qaItemName = 'item_' + i;
+    userQa[qaItemName] = {
+        question: question,
+        answer: answer
+    };
+    console.log(userQa);
+    i++;
+    $('.build_your_own').after('<div class="content-item"><div class="qa"><div class="content-item--question"></div><div class="content-item--answer"></div></div></div>');
+    $('.content-item--question').html(userQa[qaItemName].question);
+    $('.content-item--answer').html(userQa[qaItemName].answer);
+}
+
 
 //handles animations of qa items
 $('.content-item').on('click', function(){
@@ -178,3 +192,25 @@ function contentChange(location){
     $header.siblings().not(document.getElementsByClassName(location)).css('display', 'none');
 };
 
+//injects build inputs for QA items and handles animations on page
+$('.qa').after('<button class="build_button">Build Your Own!</button><div class="build_your_own"><input class="question" type="text" placeholder="Question"><input class="answer" type="text" placeholder="Answer"><button class="submitItem">Build</button></div>');
+$('.build_button').on('click', function(){
+    $(this).fadeOut();
+
+    $(this).siblings('.qa').fadeOut(600, function(){
+        $(this).siblings('.build_your_own').fadeIn(500).css('display', 'flex');
+    });
+});
+
+//handles building qa object for singular qa item
+var i = 0;
+$('.build_your_own').children('button').on('click', function(){
+    if($(this).siblings('.question').val() !== '' && $(this).siblings('.answer').val() !== ''){
+        var questionItem = $(this).siblings('.question').val();
+        var answerItem = $(this).siblings('.answer').val();
+        buildQaItem(questionItem, answerItem);
+    } else {
+        alert('Please fill out both fields.');
+    }
+
+});
