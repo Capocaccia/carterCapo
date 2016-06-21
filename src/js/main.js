@@ -139,7 +139,7 @@ for(var qaItem in qa){
     $('<div class="content-item"><div class="content-item--question"></div><div class="content-item--answer"></div></div>').appendTo('.qa');
     $('.content-item--question:last').html(obj.question);
     $('.content-item--answer:last').html(obj.answer);
-};
+}
 
 //builds singular qa item
 //todo: need to fine tune building of new questions and styling
@@ -150,7 +150,6 @@ function buildQaItem(question, answer){
         question: question,
         answer: answer
     };
-    console.log(userQa);
     i++;
     $('.build_your_own').after('<div class="content-item"><div class="qa"><div class="content-item--question"></div><div class="content-item--answer"></div></div></div>');
     $('.content-item--question').html(userQa[qaItemName].question);
