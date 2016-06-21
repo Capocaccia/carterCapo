@@ -1,4 +1,5 @@
 module.exports = function (grunt) {
+    require("load-grunt-tasks")(grunt);
 
     "use strict";
 
@@ -28,6 +29,16 @@ module.exports = function (grunt) {
             css: {
                 files: ['src/scss/**/*.scss'],
                 tasks: ['sass', 'postcss']
+            }
+        },
+        "babel": {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    "dist/app.js": "src/js/*.js"
+                }
             }
         },
         browserSync: {
@@ -63,7 +74,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.registerTask("default", ["babel"]);
 
     // Default task(s).
-    grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.registerTask('default', ['browserSync', 'watch', 'babel']);
 };
