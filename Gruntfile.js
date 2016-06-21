@@ -31,16 +31,6 @@ module.exports = function (grunt) {
                 tasks: ['sass', 'postcss']
             }
         },
-        "babel": {
-            options: {
-                sourceMap: true
-            },
-            dist: {
-                files: {
-                    "dist/app.js": "src/js/*.js"
-                }
-            }
-        },
         browserSync: {
             dev: {
                 bsFiles: {
@@ -74,8 +64,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
-    grunt.registerTask("default", ["babel"]);
 
     // Default task(s).
-    grunt.registerTask('default', ['browserSync', 'watch', 'babel']);
+    grunt.registerTask('default', ['browserSync', 'watch']);
 };
