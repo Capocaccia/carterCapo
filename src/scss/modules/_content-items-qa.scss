@@ -61,3 +61,81 @@
         }
     }
 }
+
+.build_button {
+    position: relative;
+    z-index: 200;
+    width: 50vw;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: $primary-color;
+    color: $quaternary-color;
+    text-transform: uppercase;
+    border: 3px solid $quaternary-color;
+    transition: 0.3s;
+    &:hover {
+        cursor: pointer;
+        color: $secondary-color;
+        border: 3px solid $secondary-color;
+    }
+}
+
+.build_your_own {
+    display: none;
+    position: relative;
+    z-index: 200;
+    justify-content: space-between;
+    width: 70vw;
+    input {
+        flex-basis: 40%;
+        height: 40px;
+        background-color: $primary-color;
+        border: 3px solid $quaternary-color;
+        color: $quaternary-color;
+        font-size: 16px;
+        font-family: $primary-font;
+        &:focus {
+            outline-color: $secondary-color;
+        }
+        &::placeholder{
+            padding-left: 10px;
+            font-size: 16px;
+            font-family: $primary-font;
+            color: $quaternary-color;
+        }
+    }
+    button {
+        font-size: 16px;
+        background-color: $primary-color;
+        color: $quaternary-color;
+        border: 3px solid $quaternary-color;
+        flex-basis: 10%;
+        transition: 0.3s;
+        &:hover {
+            cursor: pointer;
+            color: $secondary-color;
+            border: 3px solid $secondary-color;
+        }
+    }
+}
+
+.content-item {
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    border: 3px solid $quaternary-color;
+    margin: 20px 0;
+    transition: $transition-time;
+    &:hover {
+        cursor: pointer;
+        .content-item--question {
+            &:after {
+                color: $primary-color;
+            }
+        }
+    }
+}
