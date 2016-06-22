@@ -8,18 +8,27 @@ for(var qaItem in qa){
 
 //handles building qa object for singular qa item
 var i = 0;
-$('.build_your_own').children('button').on('click', function(){
-    if($(this).siblings('.question').val() !== '' && $(this).siblings('.answer').val() !== ''){
-        var questionItem = $(this).siblings('.question').val();
-        var answerItem = $(this).siblings('.answer').val();
-        buildQaItem(questionItem, answerItem);
-    } else {
-        alert('Please fill out all available fields.');
-    }
-});
+$(document).ready(function(){
+    let qaQuestionSubmitError = 'Please fill out the Question field';
+    let qaAnswerSubmitError = 'Please fill out the Answer field';
+    $('.submitItem').on('click', function(){
+        if($(this).siblings('.question').val() !== '' && $(this).siblings('.answer').val() !== ''){
+            var questionItem = $(this).siblings('.question').val();
+            var answerItem = $(this).siblings('.answer').val();
+            buildQaItem(questionItem, answerItem);
+        } else if ($(this).siblings('.question').val() == '' && $(this).siblings('.answer').val() == ''){
+            $(this).siblings('.answer').attr('placeholder', qaAnswerSubmitError);
+            $(this).siblings('.question').attr('placeholder', qaQuestionSubmitError);
+        } else if($(this).siblings('.question').val() == '') {
+            $(this).siblings('.question').attr('placeholder', qaQuestionSubmitError);
+        } else if ($(this).siblings('.answer').val() == ''){
+            $(this).siblings('.answer').attr('placeholder', qaAnswerSubmitError);
+        }
+    });
+})
+
 
 //builds singular qa item
-//todo: need to fine tune building of new questions and styling
 let userQa = {};
 function buildQaItem(question, answer){
     let qaItemName = 'item_' + i;
@@ -28,9 +37,10 @@ function buildQaItem(question, answer){
         answer: answer
     };
     i++;
-    $('.build_your_own').after('<div class="content-item"><div class="qa"><div class="content-item--question"></div><div class="content-item--answer"></div></div></div>');
+    $('.build_your_own').after('<div class="qa"><div class="content-item"><div class="content-item--question"></div><div class="content-item--answer"></div></div></div>');
     $('.content-item--question').html(userQa[qaItemName].question);
     $('.content-item--answer').html(userQa[qaItemName].answer);
+    $('.content-item').unbind(bindQaClick()).bind(bindQaClick());
 }
 
 //injects build inputs for QA items and handles animations on page
@@ -44,7 +54,15 @@ $('.build_button').on('click', function(){
 });
 
 //handles animations of qa items
-$('.content-item').on('click', function(){
-    $(this).children('.content-item--answer').slideToggle();
-    $(this).children('.content-item--question').toggleClass('js_arrow_rotate');
-});
+$(document).ready(bindQaClick);
+//todo: fine tune binding click handlers
+function bindQaClick(){
+    $('.content-item').on('click', function(){
+        if($(this).children('.content-item--answer').hasClass('open')){
+            $(this).children('.content-item--answer').slideUp().removeClass('open');
+        } else {
+            $(this).children('.content-item--answer').slideDown().addClass('open');
+        }
+        $(this).children('.content-item--question').toggleClass('js_arrow_rotate');
+    });
+}
