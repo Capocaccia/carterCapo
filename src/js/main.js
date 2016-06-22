@@ -19,11 +19,20 @@ for(var section in sections){
 
 let $section = $('.section');
 
+$('.Carter').css('display', 'flex');
+
 //gets section data for hiding and showing page contents
 $section.click(function(){
     let sectionTitle = $(this).children('p').html();
-    let location = sectionTitle.replace(/\s/g, '');
-    contentChange(location);
+    //checks if item is homepage and has spaces.
+    if(sectionTitle.indexOf(sections.section_1.title) > -1){
+        let location = sections.section_1.title;
+        let locationItems = location.split(' ');
+        let homepage = locationItems[0];
+        contentChange(homepage);
+    } else {
+        contentChange(sectionTitle);
+    }
 });
 
 //hides and shows page contents
@@ -31,4 +40,3 @@ function contentChange(location){
     $('.' + location).removeClass('hidden').css('display', 'flex');
     $header.siblings().not(document.getElementsByClassName(location)).css('display', 'none');
 };
-
