@@ -1,8 +1,11 @@
 let sections = {
     section_1: {
         title :'Carter Capocaccia',
-        tagline: 'Welcome!  I am Carter Capocaccia. I\'m a passionate web developer learning more every day. Technology gives me inspirations to improve the world around me.',
-        stylingClasses: 'section-home'
+        tagline: 'Welcome!  I am Carter Capocaccia. I\'m a passionate web developer learning more every day. Technology gives me the inspiration to improve the world around me.',
+        stylingClasses: 'section-home',
+        background: 'src/images/race.jpeg',
+        contentMount: '<div></div>',
+        contentClass: 'main'
     },
     section_2: {
         title: 'About',
@@ -40,17 +43,17 @@ let qa = {
         question: 'You make websites?  What languages do you use?',
         answer: 'Yes I do!  I use PHP, Twig, JavaScript, jQuery, HTML5, SASS, Mongo, Node, GitHub, Grunt, NPM, Bower and more!'
     },
-    item_3: {
-        question: 'How did you start writing code?',
-        answer: 'From hobby to job.  I graduated from Nashville Software School and dove into a career with a web agency in Memphis.'
-    },
     item_4: {
         question: 'How do you pronounce your last name?',
         answer: 'cap-O-coch-E.  You can ask me again later. its ok.'
     },
     item_5: {
         question: 'What are your hobbies?',
-        answer: 'Lots. Writing code, cycling with the Memphis Hightailers, CounterStrike, Cooking, Firearms, My dog Doug, Fishing'
+        answer: 'Lots. Writing code, cycling with the Memphis Hightailers, CounterStrike, Cooking, Firearms, My dog Doug, Fishing.'
+    },
+    item_6: {
+        question: 'How did you make this website?',
+        answer: 'It is dynamically built using JSON Objects, JavaScript, jQuery, Grunt, BrowserSync, NPM, SASS, GitHub and a little HTML.'
     }
 };
 
