@@ -1,3 +1,8 @@
+.content-item {
+    position: relative;
+    z-index: 200;
+}
+
 .qa {
     z-index: 200;
     width: 70vw;
@@ -16,7 +21,10 @@
             cursor: pointer;
             .content-item--question {
                 &:after {
-                    color: $primary-color;
+                    background-color: $secondary-color;
+                }
+                &:before {
+                    background-color: $secondary-color;
                 }
             }
         }
@@ -30,19 +38,33 @@
             text-transform: uppercase;
             text-align: center;
             &:after {
-                content: '\25c0';
+                content: '';
                 position: absolute;
+                height: 20px;
+                width: 2px;
+                background-color: $quaternary-color;
                 right: -30px;
-                transform: rotate(0deg);
+                transition: $transition-time;
+                font-size: 15px;
+                color: $quaternary-color;
+            }
+            &:before {
+                content: '';
+                transform: rotate(90deg);
+                position: absolute;
+                height: 20px;
+                width: 2px;
+                background-color: $quaternary-color;
+                right: -30px;
                 transition: $transition-time;
                 font-size: 15px;
                 color: $quaternary-color;
             }
             &.js_arrow_rotate{
                 &:after {
-                    content: '\25c0';
+                    content: '';
                     position: absolute;
-                    transform: rotate(-90deg);
+                    transform: rotate(90deg);
                     transition: $transition-time;
                     right: -30px;
                     font-size: 15px;
@@ -75,7 +97,6 @@
     transition: 0.3s;
     &:hover {
         cursor: pointer;
-        color: $secondary-color;
         border: 3px solid $secondary-color;
     }
 }
@@ -113,8 +134,10 @@
         transition: 0.3s;
         &:hover {
             cursor: pointer;
-            color: $secondary-color;
             border: 3px solid $secondary-color;
+        }
+        &:focus {
+            outline: none;
         }
     }
 }
