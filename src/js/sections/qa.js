@@ -36,32 +36,32 @@ function buildQaItem(question, answer){
         question: question,
         answer: answer
     };
+    if(i < 1){
+        $('.build_your_own').after('<div class="qa newQa"></div>');
+    }
     i++;
-    $('.build_your_own').after('<div class="qa"><div class="content-item"><div class="content-item--question"></div><div class="content-item--answer"></div></div></div>');
-    $('.content-item--question').html(userQa[qaItemName].question);
-    $('.content-item--answer').html(userQa[qaItemName].answer);
-    $('.content-item').unbind(bindQaClick()).bind(bindQaClick());
+    $('<div class="content-item"><div class="content-item--question"></div><div class="content-item--answer"></div></div>').appendTo('.newQa');
+    $('.content-item--question:last').append(userQa[qaItemName].question);
+    $('.content-item--answer:last').append(userQa[qaItemName].answer);
 }
 
 //injects build inputs for QA items and handles animations on page
 $('.qa').after('<button class="build_button">Build Your Own!</button><div class="build_your_own"><input class="question" type="text" placeholder="Question"><input class="answer" type="text" placeholder="Answer"><button class="submitItem">Build</button></div>');
 $('.build_button').on('click', function(){
     $(this).fadeOut();
-
-    $(this).siblings('.qa').fadeOut(600, function(){
-        $(this).siblings('.build_your_own').fadeIn(500).css('display', 'flex');
+    $(this).siblings().children('.content-item').fadeOut(500, function(){
+        $(this).parent().siblings('.build_your_own').fadeIn(1000).css('display', 'flex');
     });
 });
 
-//handles animations of qa items
-$(document).ready(bindQaClick);
-//todo: fine tune binding click handlers
-function bindQaClick(){
-    $('.content-item').on('click', function(){
+//binds click on qa content items
+$(document).ready(bindEventDelegation);
+function bindEventDelegation() {
+    $(document).on('click', '.content-item', function() {
         if($(this).children('.content-item--answer').hasClass('open')){
-            $(this).children('.content-item--answer').slideUp().removeClass('open');
+            $(this).children('.content-item--answer').stop().slideUp().removeClass('open');
         } else {
-            $(this).children('.content-item--answer').slideDown().addClass('open');
+            $(this).children('.content-item--answer').stop().slideDown().addClass('open');
         }
         $(this).children('.content-item--question').toggleClass('js_arrow_rotate');
     });
