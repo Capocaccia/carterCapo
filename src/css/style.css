@@ -96,8 +96,8 @@ body {
     position: absolute;
     top: 0;
     content: '';
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: rgba(15, 22, 38, 0.7); }
   .content h2 {
     padding-top: 50px;
@@ -218,7 +218,7 @@ body {
 .build_button {
   position: relative;
   z-index: 200;
-  width: 50vw;
+  width: 70vw;
   height: 50px;
   margin-bottom: 20px;
   background-color: #0F1626;
@@ -247,26 +247,23 @@ body {
     border: 3px solid #F5F5F5;
     color: #F5F5F5;
     font-size: 16px;
-    font-family: Sanchez, sans-serif; }
+    font-family: Sanchez, sans-serif;
+    padding-left: 10px; }
     .build_your_own input:focus {
       outline-color: #AB987A; }
     .build_your_own input::-webkit-input-placeholder {
-      padding-left: 10px;
       font-size: 16px;
       font-family: Sanchez, sans-serif;
       color: #F5F5F5; }
     .build_your_own input::-moz-placeholder {
-      padding-left: 10px;
       font-size: 16px;
       font-family: Sanchez, sans-serif;
       color: #F5F5F5; }
     .build_your_own input:-ms-input-placeholder {
-      padding-left: 10px;
       font-size: 16px;
       font-family: Sanchez, sans-serif;
       color: #F5F5F5; }
     .build_your_own input::placeholder {
-      padding-left: 10px;
       font-size: 16px;
       font-family: Sanchez, sans-serif;
       color: #F5F5F5; }
@@ -313,35 +310,43 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  width: 70vw; }
-  .project--item {
-    box-sizing: border-box;
-    border: 2px solid #F5F5F5;
-    margin: 10px;
-    padding: 10px 0;
-    position: relative;
-    z-index: 200;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+  height: 100%;
+  width: 70%; }
+  .project .project--item__link {
     -webkit-flex-basis: 45%;
         -ms-flex-preferred-size: 45%;
             flex-basis: 45%;
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    margin: 10px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .project .project--item__link > .background {
+      background-size: cover;
+      background-repeat: no-repeat; }
+  .project--item {
+    box-sizing: border-box;
+    border: 2px solid #F5F5F5;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 200;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
@@ -360,17 +365,6 @@ body {
       font-size: 16px;
       margin: 0 20px 20px 20px;
       text-align: center; }
-    .project--item__link {
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      margin-bottom: 20px; }
-      .project--item__link img {
-        width: 50%;
-        height: 50%; }
 
 .contact {
   width: 70vw;
@@ -392,6 +386,10 @@ body {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 10px;
     -webkit-flex-basis: 25%;
         -ms-flex-preferred-size: 25%;
             flex-basis: 25%;
@@ -399,6 +397,7 @@ body {
         -ms-flex-positive: 5;
             flex-grow: 5; }
     .contact .contactItem p {
+      margin: 0;
       transition: 0.3s;
       text-transform: uppercase;
       font-size: 18px;
@@ -407,4 +406,10 @@ body {
     .contact .contactItem:hover p {
       transition: 0.3s;
       color: #FF533D; }
+    .contact .contactItem a {
+      height: 80%;
+      width: 80%; }
+      .contact .contactItem a img {
+        height: 100%;
+        width: 100%; }
 /*# sourceMappingURL=style.css.map */

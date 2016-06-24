@@ -87,7 +87,7 @@
 .build_button {
     position: relative;
     z-index: 200;
-    width: 50vw;
+    width: 70vw;
     height: 50px;
     margin-bottom: 20px;
     background-color: $primary-color;
@@ -115,11 +115,11 @@
         color: $quaternary-color;
         font-size: 16px;
         font-family: $primary-font;
+        padding-left: 10px;
         &:focus {
             outline-color: $secondary-color;
         }
         &::placeholder{
-            padding-left: 10px;
             font-size: 16px;
             font-family: $primary-font;
             color: $quaternary-color;
