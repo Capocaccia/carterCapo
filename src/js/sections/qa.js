@@ -49,8 +49,8 @@ function buildQaItem(question, answer){
 $('.qa').after('<button class="build_button">Build Your Own!</button><div class="build_your_own"><input class="question" type="text" placeholder="Question"><input class="answer" type="text" placeholder="Answer"><button class="submitItem">Build</button></div>');
 $('.build_button').on('click', function(){
     $(this).fadeOut();
-    $(this).siblings().children('.content-item').fadeOut(500, function(){
-        $(this).parent().siblings('.build_your_own').fadeIn(1000).css('display', 'flex');
+    $(this).siblings('.qa').fadeOut(500, function(){
+        $(this).parent().children('.build_your_own').fadeIn(800).css('display', 'flex');
     });
 });
 
