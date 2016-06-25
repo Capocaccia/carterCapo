@@ -39,6 +39,9 @@ function buildQaItem(question, answer){
     if(i < 1){
         $('.build_your_own').after('<div class="qa newQa"></div>');
     }
+    if(i > 4){
+        $('.build_your_own').fadeOut(300);
+    }
     i++;
     $('<div class="content-item"><div class="content-item--question"></div><div class="content-item--answer"></div></div>').appendTo('.newQa');
     $('.content-item--question:last').append(userQa[qaItemName].question);

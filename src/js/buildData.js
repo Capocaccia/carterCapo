@@ -1,7 +1,7 @@
 let sections = {
     section_1: {
         title :'Carter Capocaccia',
-        tagline: 'Welcome!  I am Carter Capocaccia. I\'m a passionate web developer learning more every day. Technology gives me the inspiration to improve the world around me.',
+        tagline: 'Welcome!  I am Carter Capocaccia, a passionate web developer learning more every day. Technology gives me the inspiration to improve the world around me.',
         stylingClasses: 'section-home',
         background: 'src/images/race.jpeg',
         contentMount: '<div></div>',
