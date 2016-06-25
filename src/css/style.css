@@ -75,10 +75,12 @@ body {
     font-size: 20px;
     letter-spacing: 2px; }
 
+body {
+  height: 100vh; }
+
 .content {
   display: none;
   position: relative;
-  height: 100vh;
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -89,6 +91,8 @@ body {
       -ms-flex-align: center;
               -ms-grid-row-align: center;
           align-items: center;
+  padding: 50px;
+  height: 100%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat; }
@@ -100,14 +104,13 @@ body {
     width: 100%;
     background-color: rgba(15, 22, 38, 0.7); }
   .content h2 {
-    padding-top: 50px;
     font-family: Sanchez, sans-serif;
     z-index: 200;
     color: #F5F5F5;
     font-size: 22px;
     width: 80vw;
     text-align: center;
-    margin: 15px 0;
+    margin: 0 0 15px 0;
     letter-spacing: 2.5px; }
   .content .tagline {
     font-family: Source Sans Pro, sans-serif;
@@ -312,11 +315,14 @@ body {
   display: flex;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+          flex-wrap: wrap;
+  width: 80%;
+  height: 100%; }
   .project .project--item__link {
-    -webkit-flex-basis: 30.333333%;
-        -ms-flex-preferred-size: 30.333333%;
-            flex-basis: 30.333333%;
+    box-sizing: border-box;
+    -webkit-flex-basis: 30%;
+        -ms-flex-preferred-size: 30%;
+            flex-basis: 30%;
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
@@ -328,6 +334,10 @@ body {
     text-decoration: none;
     position: relative;
     z-index: 200; }
+    .project .project--item__link:hover {
+      cursor: pointer; }
+      .project .project--item__link:hover .project--item__title {
+        color: #AB987A; }
   .project--item {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -343,14 +353,18 @@ body {
             align-items: center;
     margin: 10px; }
     .project--item__title {
+      transition: 0.3s;
+      text-align: center;
       color: #F5F5F5;
       font-family: Sanchez, sans-serif; }
     .project--item__description {
+      text-align: center;
       color: #F5F5F5;
       font-family: Source Sans Pro, sans-serif; }
     .project--item .background {
       min-height: 100px;
       min-width: 100px;
+      background-position: center center;
       background-size: cover;
       background-repeat: no-repeat; }
 
@@ -363,7 +377,8 @@ body {
       -ms-flex-pack: distribute;
           justify-content: space-around;
   border: 2px solid #F5F5F5;
-  z-index: 200; }
+  z-index: 200;
+  padding: 20px; }
   .contact .contactItem {
     display: -webkit-flex;
     display: -ms-flexbox;

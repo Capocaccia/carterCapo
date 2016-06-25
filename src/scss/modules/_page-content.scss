@@ -1,10 +1,15 @@
+body {
+    height: 100vh;
+}
+
 .content {
     display: none;
     position: relative;
-    height: 100vh;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
+    padding: 50px;
+    height: 100%;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -17,14 +22,13 @@
         background-color: rgba($primary-color, 0.7);
     }
     h2 {
-        padding-top: 50px;
         font-family: $primary-font;
         z-index: 200;
         color: $quaternary-color;
         font-size: 22px;
         width: 80vw;
         text-align: center;
-        margin: 15px 0;
+        margin: 0 0 15px 0;
         letter-spacing: 2.5px;
     }
     .tagline {
