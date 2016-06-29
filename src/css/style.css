@@ -10,12 +10,10 @@ body {
           justify-content: space-between;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center;
-  min-height: 125px; }
+          align-items: center; }
   @media only screen and (max-width: 964px) {
     .header {
-      display: none;
-      min-height: 50px; } }
+      display: none; } }
 
 .section {
   text-align: center;
@@ -103,9 +101,6 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat; }
-  @media only screen and (max-width: 964px) {
-    .content {
-      height: auto; } }
   .content:after {
     position: absolute;
     top: 0;

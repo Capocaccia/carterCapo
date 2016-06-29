@@ -9,9 +9,6 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    @include tablet-phone-break {
-        height: auto;
-    }
     &:after {
         position: absolute;
         top: 0;

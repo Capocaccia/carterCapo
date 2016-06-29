@@ -5,10 +5,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: $header-item-height;
     @include tablet-phone-break {
         display: none;
-        min-height: 50px;
     }
 }
 
