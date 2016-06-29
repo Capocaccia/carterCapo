@@ -1,3 +1,4 @@
-/**
- * Created by Carter on 6/28/16.
- */
+$('.navicon').on('click', function(){
+    $(this).parent().siblings('.header').slideToggle();
+    $('.navicon').toggleClass('active');
+});
