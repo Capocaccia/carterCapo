@@ -101,6 +101,10 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat; }
+  @media only screen and (max-width: 964px) {
+    .content {
+      padding: 100px 0;
+      height: inherit; } }
   .content:after {
     position: absolute;
     top: 0;
@@ -415,12 +419,9 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin: 10px;
-    -webkit-flex-basis: 25%;
-        -ms-flex-preferred-size: 25%;
-            flex-basis: 25%;
-    -webkit-flex-grow: 5;
-        -ms-flex-positive: 5;
-            flex-grow: 5; }
+    -webkit-flex-basis: 23%;
+        -ms-flex-preferred-size: 23%;
+            flex-basis: 23%; }
     .contact .contactItem p {
       margin: 0;
       transition: 0.3s;
