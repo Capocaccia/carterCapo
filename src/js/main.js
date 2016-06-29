@@ -17,6 +17,9 @@ for(var section in sections){
     }
 }
 
+$('.content').append('<div class="navicon"</div>');
+
+
 let $section = $('.section');
 
 $('.Carter').css('display', 'flex');
