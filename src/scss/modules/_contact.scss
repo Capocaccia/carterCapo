@@ -5,6 +5,7 @@
     border: 2px solid $quaternary-color;
     z-index: 200;
     padding: 20px;
+    flex-wrap: wrap;
     .contactItem {
         display: flex;
         flex-direction: column;

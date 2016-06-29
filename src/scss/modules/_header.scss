@@ -6,9 +6,16 @@ body {
     justify-content: space-between;
     align-items: center;
     min-height: $header-item-height;
+    @include tablet-phone-break {
+        display: none;
+        min-height: 50px;
+    }
 }
 
 .section {
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,6 +23,10 @@ body {
     flex-basis: 21.6666666666666%;
     flex-grow: 1;
     transition: $transition-time;
+    @include tablet-phone-break {
+        min-height: 50px;
+    }
+
     &:nth-of-type(1) {
         flex-basis: 35%;
         flex-grow: 1;

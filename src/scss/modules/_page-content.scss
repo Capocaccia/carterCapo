@@ -1,18 +1,17 @@
-body {
-    height: 100vh;
-}
-
 .content {
     display: none;
     position: relative;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    padding: 50px;
-    height: 100%;
+    padding: 50px 0;
+    height: 100vh;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    @include tablet-phone-break {
+        height: auto;
+    }
     &:after {
         position: absolute;
         top: 0;

@@ -1,0 +1,41 @@
+.navicon {
+    display: none;
+    @include tablet-phone-break {
+        display: block;
+    }
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    transition: 0.3s;
+    z-index: 200;
+    &:hover {
+        cursor: pointer;
+    }
+    &.active {
+        transform: rotate(45deg);
+
+    }
+    &:after {
+        content: '';
+        height: 4px;
+        width: 80%;
+        position: absolute;
+        bottom: 21px;
+        background-color: $quaternary-color;
+        right: 5px;
+    }
+    &:before {
+        transition: 0.3s;
+        content: '';
+        height: 4px;
+        width: 80%;
+        position: absolute;
+        background-color: $quaternary-color;
+        bottom: 0;
+        top: 25px;
+        transform: rotate(90deg);
+        left: 5px;
+    }
+}
