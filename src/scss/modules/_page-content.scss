@@ -5,13 +5,13 @@
     flex-direction: column;
     align-items: center;
     padding: 50px 0;
-    height: 100vh;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    height: 100vh;
     @include tablet-phone-break {
+        min-height: 100vh;
         padding: 100px 0;
-        height: inherit;
     }
     &:after {
         position: absolute;

@@ -37,6 +37,11 @@
             font-size: 18px;
             text-transform: uppercase;
             text-align: center;
+            @include phone-break {
+                &:after, &:before {
+                    display: none;
+                }
+            }
             &:after {
                 content: '';
                 position: absolute;
