@@ -79,7 +79,7 @@ let projects = {
     },
     project_3: {
         title: 'Cartercapo.com',
-        description: 'This website is dynamically built using JSON Objects, JavaScript, and jQuery.',
+        description: 'This website is dynamically built using JSON Objects, JavaScript, jQuery, SASS, Grunt, BrowserSync, NPM, Bower and GitHub.',
         link: 'https://github.com/Capocaccia/carterCapo',
         image: 'src/images/github.svg'
     }
