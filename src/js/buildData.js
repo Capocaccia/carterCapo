@@ -43,6 +43,10 @@ let qa = {
         question: 'You make websites?  What languages do you use?',
         answer: 'Yes I do!  I use PHP, Twig, JavaScript, jQuery, HTML5, SASS, Mongo, Node, GitHub, Grunt, NPM, Bower and more!'
     },
+    item_3: {
+        question: 'How did you make this website?',
+        answer: 'It is dynamically built using JSON Objects, JavaScript, jQuery, Grunt, BrowserSync, NPM, SASS, GitHub and a little HTML.'
+    },
     item_4: {
         question: 'How do you pronounce your last name?',
         answer: 'cap-O-coch-E.  You can ask me again later. its ok.'
@@ -50,10 +54,6 @@ let qa = {
     item_5: {
         question: 'What are your hobbies?',
         answer: 'Lots. Writing code, cycling with the Memphis Hightailers, CounterStrike, Cooking, Firearms, My dog Doug, Fishing.'
-    },
-    item_6: {
-        question: 'How did you make this website?',
-        answer: 'It is dynamically built using JSON Objects, JavaScript, jQuery, Grunt, BrowserSync, NPM, SASS, GitHub and a little HTML.'
     }
 };
 

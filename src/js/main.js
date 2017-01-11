@@ -17,7 +17,7 @@ for(var section in sections){
     }
 }
 
-$('.content').append('<div class="navicon"</div>');
+$('.content').append('<div class="navicon"></div>');
 
 
 let $section = $('.section');
