@@ -1,0 +1,42 @@
+.contact {
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid $quaternary-color;
+    z-index: 200;
+    padding: 20px;
+    flex-wrap: wrap;
+    .contactItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px;
+        flex-basis: 23%;
+        @include phone-break {
+            flex-basis: 45%;
+        }
+        p {
+            margin: 0;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 18px;
+            color: $quaternary-color;
+            font-family: $primary-font;
+        }
+        &:hover {
+            p {
+                transition: 0.3s;
+                color: $tertiary-color;
+            }
+        }
+        a {
+            height: 80%;
+            width: 80%;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
