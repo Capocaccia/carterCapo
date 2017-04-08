@@ -6,15 +6,17 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.13.0",
     "grunt": "^1.0.1",
     "grunt-autoprefixer": "^3.0.4",
+    "grunt-babel": "^6.0.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^1.2.0",
-    "node-sass": "*",
+    "load-grunt-tasks": "^3.5.0",
+    "node-sass": "^3.7.0",
     "postcss-flexbugs-fixes": "^2.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

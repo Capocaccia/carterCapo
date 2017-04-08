@@ -1,4 +1,5 @@
 module.exports = function (grunt) {
+    require("load-grunt-tasks")(grunt);
 
     "use strict";
 
@@ -6,7 +7,6 @@ module.exports = function (grunt) {
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
-
         sass: {
             options: {
                 sourceMap: true
@@ -17,30 +17,33 @@ module.exports = function (grunt) {
                 }
             }
         },
-
-        autoprefixer: {
-            single_file: {
-                options: {
-                    browsers: ['last 4 version', 'ie 7', 'ie 8', 'ie 9'],
-                    map: true
-                },
-                src: 'css/style.css'
-            }
-        },
-
         watch: {
-            css: {
-                files: ['scss/**/*.scss'],
-                tasks: ['sass', 'autoprefixer']
-            },
-            twig: {
-                files: ['Site/Views/*.twig']
-            },
-            js: {
-                files: ['jscripts/src/*.js']
-            },
             options: {
                 spawn: false
+            },
+
+            scripts: {
+                files: ['src/js/*.js']
+            },
+
+            css: {
+                files: ['src/scss/**/*.scss'],
+                tasks: ['sass', 'postcss']
+            }
+        },
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : [
+                        'src/css/**/*.css',
+                        'src/*.html',
+                        'src/js/**/*.js'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    server: './'
+                }
             }
         },
         postcss: {
@@ -52,17 +55,16 @@ module.exports = function (grunt) {
                 ]
             },
             dist: {
-                src: 'css/*.css'
+                src: 'src/css/*.css'
             }
         }
-
     });
 
-    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-browser-sync');
 
     // Default task(s).
-    grunt.registerTask('style', ['sass', 'postcss']);
-
+    grunt.registerTask('default', ['browserSync', 'watch']);
 };
