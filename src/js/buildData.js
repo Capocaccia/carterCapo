@@ -3,7 +3,7 @@ let sections = {
         title :'Carter Capocaccia',
         tagline: 'Welcome!  I am Carter Capocaccia, a passionate web developer learning more every day. Technology gives me the inspiration to improve the world around me.',
         stylingClasses: 'section-home',
-        background: 'src/images/race.jpeg',
+        background: 'src/images/bikerace.jpeg',
         contentMount: '<div></div>',
         contentClass: 'main'
     },
