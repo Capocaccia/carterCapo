@@ -82,6 +82,18 @@ let projects = {
         description: 'This website is dynamically built using JSON Objects, JavaScript, jQuery, SASS, Grunt, BrowserSync, NPM, Bower and GitHub.',
         link: 'https://github.com/Capocaccia/carterCapo',
         image: 'src/images/github.svg'
+    },
+    project_4: {
+        title: 'CSS / JS Clock',
+        description: 'Just a clock made with CSS and JavaScript utilizing CSS Transform properties and some math.',
+        link: 'https://github.com/Capocaccia/cssJsClock',
+        image: 'src/images/cssClock.png'
+    },
+    project_5: {
+        title: 'Js Drumkit',
+        description: 'Lets get loud. This is a drumkit made with vanilla JS. It handles keypress events and click events.',
+        link: 'https://github.com/Capocaccia/drumKit',
+        image: 'src/images/drumKit.png'
     }
 };
 
