@@ -4,23 +4,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#0F1626">
   <title>Carter Capocaccia</title>
-  <link rel="stylesheet" type="text/css" href="src/css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Sanchez|Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <header class="header">
-  </header>
+  <header class="header"></header>
+  <div class="mount">
+  	
+  </div>
 </body>
-<script>
-function gotData(data) {
-	console.log(data);
-  	window.hasData = true;
-    window.about = data.about;
-    window.projects = data.projects;
-    window.contact = data.contact;
-    window.home=data.home;
-  }
-</script>
-<script src="https://cartercapo-a6615.firebaseio.com/.json?callback=gotData">
-</script>
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="js/sections/home.js" type="text/javascript" charset="utf-8" async defer></script>
 </html>
