@@ -7,6 +7,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.13.0",
+    "firebase": "^4.7.0",
     "grunt": "^1.0.1",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-babel": "^6.0.0",

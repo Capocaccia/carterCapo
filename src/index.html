@@ -11,4 +11,16 @@
   <header class="header">
   </header>
 </body>
+<script>
+function gotData(data) {
+	console.log(data);
+  	window.hasData = true;
+    window.about = data.about;
+    window.projects = data.projects;
+    window.contact = data.contact;
+    window.home=data.home;
+  }
+</script>
+<script src="https://cartercapo-a6615.firebaseio.com/.json?callback=gotData">
+</script>
 </html>
