@@ -5,9 +5,9 @@ var config = {
 };
 
 firebase.initializeApp(config);
-
-const buildData = firebase.database().ref().once('value').then(function(snapshot) {
-	return snapshot.child('home').val();
+var  buildData;
+firebase.database().ref().once('value').then(function(snapshot) {
+	buildData = snapshot.child('home').val();
 });
 
 console.log(buildData);
