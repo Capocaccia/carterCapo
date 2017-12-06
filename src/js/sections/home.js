@@ -5,14 +5,12 @@ var config = {
 };
 
 firebase.initializeApp(config);
-var  buildData;
+
 firebase.database().ref().once('value').then(function(snapshot) {
-	buildData = snapshot.child('home').val();
-});
-
-console.log(buildData);
-
-const display = `
+	return snapshot.child('home').val();
+}).then((result) => {
+	const buildData = result.page;
+	const display = `
 	<div class="${buildData.contentClass}" style="background-image: url('${buildData.background}'); display: flex;">
 		<h2>${buildData.title}</h2>
 		<p class="tagline">${buildData.tagline}</p>
@@ -20,5 +18,5 @@ const display = `
 		<div class="navicon"></div>
 	</div>
     `;
-
-document.querySelector('.mount').innerHTML = display;
+    document.querySelector('.mount').innerHTML = display;
+});
