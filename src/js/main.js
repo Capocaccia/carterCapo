@@ -43,3 +43,7 @@ function contentChange(location){
     $('.' + location).removeClass('hidden').css('display', 'flex');
     $header.siblings().not(document.getElementsByClassName(location)).css('display', 'none');
 };
+
+
+var database = firebase.database().ref('cartercapo-a6615');
+console.log(database);
