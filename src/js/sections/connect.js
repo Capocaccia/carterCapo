@@ -10,7 +10,7 @@ firebase.database().ref().once('value').then(function(snapshot) {
 	return snapshot.child('contact').val();
 }).then((result) => {
 	const buildData = result.page;
-    const contactItems = [result.contactItems];
+    const contactItems = result.contactItems;
 	const display = `
 	<div class="${buildData.contentClass}" style="background-image: url('${buildData.background}'); display: flex;">
 		<h2>${buildData.title}</h2>
@@ -24,4 +24,3 @@ firebase.database().ref().once('value').then(function(snapshot) {
     `;
     document.querySelector('.mount').innerHTML = display;
 });
-
