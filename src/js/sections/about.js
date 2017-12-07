@@ -42,8 +42,8 @@ firebase.database().ref().once('value').then(function(snapshot) {
 	let questions = document.querySelectorAll('.content-item');
 	questions.forEach((item) => {
 		item.addEventListener('click', (item)=>{
-			item.target.children[1].classList.toggle('open');
-			item.target.children[0].classList.toggle('js_arrow_rotate');
+			item.currentTarget.children[1].classList.toggle('open');
+			item.currentTarget.children[0].classList.toggle('js_arrow_rotate');
 		})
 	})
 });
