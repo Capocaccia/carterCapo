@@ -28,6 +28,23 @@
                 }
             }
         }
+        &--answer {
+            color: $quaternary-color;
+            font-family: $primary-font;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-align: center;
+            padding-top: 10px;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+            height: 0;
+            &.open {
+                height: 100%;
+                visibility: visible;
+                opacity: 1; 
+            }
+        }
         &--question {
             position: relative;
             display: flex;
@@ -52,6 +69,7 @@
                 transition: $transition-time;
                 font-size: 15px;
                 color: $quaternary-color;
+                top: 0;
             }
             &:before {
                 content: '';
@@ -76,15 +94,6 @@
                     color: $quaternary-color;
                 }
             }
-        }
-        &--answer {
-            display: none;
-            color: $quaternary-color;
-            font-family: $primary-font;
-            font-size: 16px;
-            text-transform: uppercase;
-            text-align: center;
-            padding-top: 10px;
         }
     }
 }
