@@ -6,7 +6,13 @@ body {
     justify-content: space-between;
     align-items: center;
     @include tablet-phone-break {
-        display: none;
+        max-height: 0;
+        flex-direction: column;
+        align-items: initial;
+        transition: 0.3s max-height ease;
+    }
+    &.open {
+        max-height: 999px;
     }
 }
 
