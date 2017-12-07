@@ -11,19 +11,25 @@ firebase.database().ref().once('value').then(function(snapshot) {
 }).then((result) => {
 	const buildData = result.page;
     const contactItems = result.contactItems;
+    window.test = result.contactItems;
 	const display = `
 	<div class="${buildData.contentClass}" style="background-image: url('${buildData.background}'); display: flex;">
 		<h2>${buildData.title}</h2>
-		<p class="tagline">${buildData.tagline}</p>
+		<p class="tagline">
+			${buildData.tagline}
+		</p>
 		<div class="main"></div>
 		<div class="navicon"></div>
         <div class="contact">
             ${contactItems.map(item => `
         	<div class="contactItem">
-		            <p class="title">${item.title}</p>
+		            <p class="title">
+		            	${item.title}
+		            </p>
 		            <a class="project--item__link" href="mailto:carter.capocaccia@gmail.com">
-		            <img src="${item.icon}" alt="${item.email}"></a>
-            </div>`)}
+		            	<img src="${item.icon}" alt="${item.email}">
+	            	</a>
+            </div>`).join('')}
         </div>
 	</div>
     `;

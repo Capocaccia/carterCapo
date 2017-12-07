@@ -30,7 +30,7 @@ firebase.database().ref().once('value').then(function(snapshot) {
 					<div class="background" style="background-image: url(${item.image});">
 					</div>
 				</div>
-			</a>`)}
+			</a>`).join('')}
 		  </div>
 	</div>
     `;

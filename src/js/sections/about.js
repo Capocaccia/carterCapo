@@ -16,7 +16,7 @@ firebase.database().ref().once('value').then(function(snapshot) {
 		<h2>${buildData.title}</h2>
 		<p class="tagline">${buildData.tagline}</p>
 		<div class="qa">
-			  ${aboutItems.map(item => `
+			  ${aboutItems.map((item) => `
         	<div class="content-item">
 				<div class="content-item--question">
 					${item.question}
@@ -24,7 +24,7 @@ firebase.database().ref().once('value').then(function(snapshot) {
 				<div class="content-item--answer">
 					${item.answer}
 				</div>
-			</div>`)}
+			</div>`).join('')};
 		</div>
 		<button class="build_button">Build Your Own!</button>
 		<div class="build_your_own">
@@ -36,14 +36,14 @@ firebase.database().ref().once('value').then(function(snapshot) {
 		</div>
 		<div class="main"></div>
 		<div class="navicon"></div>
-	</div>
-    `;
+	</div>`
     document.querySelector('.mount').innerHTML = display;
 }).then(() => {
 	let questions = document.querySelectorAll('.content-item');
 	questions.forEach((item) => {
 		item.addEventListener('click', (item)=>{
-			item.target.children[1].style.display = item.target.children[1].style.display == 'block' ? 'none' : 'block';
+			item.target.children[1].classList.toggle('open');
+			item.target.children[0].classList.toggle('js_arrow_rotate');
 		})
 	})
 });
