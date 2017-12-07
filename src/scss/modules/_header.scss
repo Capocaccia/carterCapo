@@ -21,6 +21,7 @@ body {
     flex-basis: 21.6666666666666%;
     flex-grow: 1;
     transition: $transition-time;
+    text-decoration: none;
     @include tablet-phone-break {
         min-height: 50px;
     }
