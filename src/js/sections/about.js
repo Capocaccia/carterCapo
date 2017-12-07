@@ -26,14 +26,6 @@ firebase.database().ref().once('value').then(function(snapshot) {
 				</div>
 			</div>`).join('')};
 		</div>
-		<button class="build_button">Build Your Own!</button>
-		<div class="build_your_own">
-			<input class="question" type="text" placeholder="Question">
-			<input class="answer" type="text" placeholder="Answer">
-			<button class="submitItem">
-				Build
-			</button>
-		</div>
 		<div class="main"></div>
 		<div class="navicon"></div>
 	</div>`
