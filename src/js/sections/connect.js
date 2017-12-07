@@ -18,7 +18,12 @@ firebase.database().ref().once('value').then(function(snapshot) {
 		<div class="main"></div>
 		<div class="navicon"></div>
         <div class="contact">
-            ${contactItems.map(item => `<div class="contactItem"><p class="title">${item.title}</p><a class="project--item__link" href="mailto:carter.capocaccia@gmail.com"><img src="${item.icon}" alt="${item.email}"></a></div>`)}
+            ${contactItems.map(item => `
+        	<div class="contactItem">
+		            <p class="title">${item.title}</p>
+		            <a class="project--item__link" href="mailto:carter.capocaccia@gmail.com">
+		            <img src="${item.icon}" alt="${item.email}"></a>
+            </div>`)}
         </div>
 	</div>
     `;
