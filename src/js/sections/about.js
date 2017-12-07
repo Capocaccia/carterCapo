@@ -38,5 +38,11 @@ firebase.database().ref().once('value').then(function(snapshot) {
 			item.currentTarget.children[0].classList.toggle('js_arrow_rotate');
 		})
 	})
+}).then(() => {
+	var navicon = document.querySelector('.navicon');
+	navicon.addEventListener('click', () => {
+		navicon.classList.toggle('active');
+		document.querySelector('.header').classList.toggle('open');
+	});
 });
 

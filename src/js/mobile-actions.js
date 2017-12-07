@@ -1,11 +1,6 @@
-$('.navicon').on('click', function(){
-    $(this).parent().siblings('.header').stop().slideToggle();
-    $('.navicon').toggleClass('active');
-});
-
-$('.section').on('click', function(){
-    if($('.navicon').hasClass('active')){
-        $('.header').slideUp();
-        $('.navicon').removeClass('active');
-    }
+var navicon = document.querySelector('.navicon');
+navicon.addEventListener('click', () => {
+	console.log(this)
+	document.querySelector('.header').classList.toggle('open');
+	
 });
