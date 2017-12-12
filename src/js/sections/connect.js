@@ -26,7 +26,7 @@ firebase.database().ref().once('value').then(function(snapshot) {
 		            <p class="title">
 		            	${item.title}
 		            </p>
-		            <a class="project--item__link" href="mailto:carter.capocaccia@gmail.com">
+		            <a class="project--item__link" href="${item.link}">
 		            	<img src="${item.icon}" alt="${item.email}">
 	            	</a>
             </div>`).join('')}
