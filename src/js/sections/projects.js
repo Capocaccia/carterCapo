@@ -4,7 +4,7 @@ firebase.database().ref().once('value').then(function(snapshot) {
 	return snapshot.child('projects').val();
 }).then((result) => {
 	const buildData = result.page;
-    const projectItems = result.projectItems;
+    const projectItems = Array.isArray(result.projectItems) ? result.projectItems : Object.values(result.projectItems);
 	const display = `
 	${renderHeader()}
 	<div class="${buildData.contentClass}" style="background-image: url('${buildData.background}'); display: flex;">
