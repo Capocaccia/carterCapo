@@ -1,8 +1,11 @@
 var config = {
-    apiKey: 'AIzaSyDt7EQc_GVKqPHWGtw_nT6osO63hOB4cIs',
-    databaseURL: 'https://cartercapo-a6615.firebaseio.com/',
-    storageBucket: 'cartercapo-a6615'
-};
+    apiKey: "AIzaSyDt7EQc_GVKqPHWGtw_nT6osO63hOB4cIs",
+    authDomain: "cartercapo-a6615.firebaseapp.com",
+    databaseURL: "https://cartercapo-a6615.firebaseio.com",
+    projectId: "cartercapo-a6615",
+    storageBucket: "cartercapo-a6615.appspot.com",
+    messagingSenderId: "1006820223736"
+  };
 
 firebase.initializeApp(config);
 
