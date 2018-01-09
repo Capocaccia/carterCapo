@@ -4,8 +4,7 @@ firebase.database().ref().once('value').then(function(snapshot) {
 	return snapshot.child('contact').val();
 }).then((result) => {
 	const buildData = result.page;
-    const contactItems = result.contactItems;
-    window.test = result.contactItems;
+    const contactItems = Array.isArray(result.contactItems) ? result.contactItems : Object.values(result.contactItems);
 	const display = `
 	${renderHeader()}
 	<div class="${buildData.contentClass}" style="background-image: url('${buildData.background}'); display: flex;">
@@ -22,7 +21,7 @@ firebase.database().ref().once('value').then(function(snapshot) {
 		            	${item.title}
 		            </p>
 		            <a class="project--item__link" href="${item.link}">
-		            	<img src="${item.icon}" alt="${item.email}">
+		            	<img src="${item.icon}" alt="${item.title}">
 	            	</a>
             </div>`).join('')}
         </div>
