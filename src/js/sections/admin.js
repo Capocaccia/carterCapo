@@ -12,17 +12,19 @@ const getProjectData = () => {
 document.querySelector('.add-project-submit').addEventListener('click', getProjectData)
 
 function writeNewProject(desc, image, linkPath, titleText) {
-  // A post entry.
-  var projectData = {
-	description: desc,
-	image: image,
-	link: linkPath,
-	title: titleText,
-  };
+	// A new entry.
+	var projectData = {
+		description: desc,
+		image: image,
+		link: linkPath,
+		title: titleText,
+	};
 
-  // Get a key for a new Post.
-  var newPostKey = firebase.database().ref().child('projects/projectItems/').push().key;
-var updates = {};
-  updates['projects/projectItems/' + newPostKey] = projectData;
-  return firebase.database().ref().update(updates);
+	// Get a key for a new entry.
+	var newPostKey = firebase.database().ref().child('projects/projectItems/').push().key;
+
+	var updates = {};
+	updates['projects/projectItems/' + newPostKey] = projectData;
+
+	return firebase.database().ref().update(updates);
 }
