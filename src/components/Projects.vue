@@ -1,11 +1,11 @@
 <template>
-    <div v-bind:class=pageData.contentClass v-bind:style="{ backgroundImage: 'url(' + pageData.background + ')' }">
+    <div v-bind:class=pageData.contentClass :style="{'background-image': `url(${require('../assets/images/blue_blocks.jpg')})`}">
         <h2>{{pageData.title}}</h2>
         <p class="tagline">{{pageData.tagline}}</p>
         <div class="main"></div>
         <div class="navicon"></div>
-        <div class="project" v-for="item in projectItems">
-            <a class="project--item__link" v-bind:href=item.link target="_blank">
+        <div class="project">
+            <a v-for="item in projectItems" class="project--item__link" v-bind:href=item.link target="_blank">
                 <div class="project--item">
                     <h3 class="project--item__title">
                         {{item.title}}
