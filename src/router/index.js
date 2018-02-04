@@ -1,15 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Home from '@/components/Home'
+import Projects from '@/components/Projects'
+import About from '@/components/About'
+import Connect from '@/components/Connect'
 
-Vue.use(Router)
+
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/projects',
+      name: 'Projects',
+      component: Projects
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: About
+    },
+    {
+      path: '/connect',
+      name: 'Connect',
+      component: Connect
     }
   ]
 })
