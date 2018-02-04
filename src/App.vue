@@ -22,11 +22,9 @@
 export default {
   name: 'App'
 }
-
 </script>
 
 <style lang="scss" scoped>
   @import 'scss/modules/_utility.scss';
   @import 'scss/modules/_header.scss';
-
 </style>
