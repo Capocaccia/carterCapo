@@ -3,7 +3,7 @@
         <h2>{{pageData.title}}</h2>
         <p class="tagline">{{pageData.tagline}}</p>
         <div class="main"></div>
-        <div class="navicon"></div>
+        <div class="navicon" v-on:click="toggleMobile($event)"></div>
         <div class="qa">
             <div v-for="item in qa" class="content-item" v-on:click="toggleAnswer($event)">
                 <div class="content-item--question">
@@ -33,6 +33,10 @@
             toggleAnswer: function(e){
                 e.srcElement.children[1].classList.toggle('open');
                 e.srcElement.children[0].classList.toggle('js_arrow_rotate');
+            },
+            toggleMobile: function(e){
+                document.querySelector('.header').classList.toggle('open');
+                e.srcElement.classList.toggle('active');
             }
         },
         mounted(){

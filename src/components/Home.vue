@@ -3,7 +3,7 @@
     <h2>{{pageData.title}}</h2>
     <p class="tagline">{{pageData.tagline}}</p>
     <div class="main"></div>
-    <div class="navicon"></div>
+    <div class="navicon" v-on:click="toggleMobile($event)"></div>
   </div>
 </template>
 
@@ -16,6 +16,12 @@ export default {
   data () {
     return {
       pageData: []
+    }
+  },
+  methods: {
+    toggleMobile: function(e){
+      document.querySelector('.header').classList.toggle('open');
+      e.srcElement.classList.toggle('active');
     }
   },
   mounted(){

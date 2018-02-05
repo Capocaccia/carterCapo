@@ -3,7 +3,7 @@
         <h2>{{pageData.title}}</h2>
         <p class="tagline">{{pageData.tagline}}</p>
         <div class="main"></div>
-        <div class="navicon"></div>
+        <div class="navicon" v-on:click="toggleMobile($event)"></div>
         <div class="project">
             <a v-for="item in projectItems" class="project--item__link" v-bind:href=item.link target="_blank">
                 <div class="project--item">
@@ -32,6 +32,12 @@
             return {
                 pageData: [],
                 projectItems: []
+            }
+        },
+        methods: {
+            toggleMobile: function(e){
+                document.querySelector('.header').classList.toggle('open');
+                e.srcElement.classList.toggle('active');
             }
         },
         mounted(){
