@@ -30,5 +30,6 @@ export default new Router({
       name: 'Connect',
       component: Connect
     }
-  ]
+  ],
+  mode: 'history'
 })
