@@ -4,6 +4,16 @@
         <p class="tagline">{{pageData.tagline}}</p>
         <div class="main"></div>
         <div class="navicon"></div>
+        <div class="qa">
+            <div v-for="item in qa" class="content-item" v-on:click="toggleAnswer($event)">
+                <div class="content-item--question">
+                    {{item.question}}
+                </div>
+                <div class="content-item--answer">
+                    {{item.answer}}
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -15,7 +25,14 @@
         name: 'About',
         data () {
             return {
-                pageData: []
+                pageData: [],
+                qa: []
+            }
+        },
+        methods: {
+            toggleAnswer: function(e){
+                e.srcElement.children[1].classList.toggle('open');
+                e.srcElement.children[0].classList.toggle('js_arrow_rotate');
             }
         },
         mounted(){
@@ -23,6 +40,7 @@
                 return snapshot.child('about').val();
             }).then((result) => {
                 this.pageData = result.page;
+                this.qa = result.aboutItems;
             })
         }
     }
@@ -30,7 +48,5 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-    @import '../scss/modules/_utility.scss';
-    @import '../scss/modules/_page-content.scss';
-    @import '../scss/modules/_content-items-qa.scss';
+    @import '../scss/style.scss';
 </style>
