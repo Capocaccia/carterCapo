@@ -4,11 +4,13 @@
   "description": "Refactor of carterCapo.com in vue.js",
   "author": "Carter Capocaccia",
   "private": true,
+  "homepage": "https://github.com/Capocaccia/carterCapo",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
     "firebase": "^4.9.1",
@@ -57,6 +59,7 @@
     "style-loader": "^0.20.1",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
+    "vue-gh-pages": "^1.8.8",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
