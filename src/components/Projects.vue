@@ -19,6 +19,9 @@
             <div class="filters-title active-filters" v-if="currentFilters.length > 0">
                 Active Filter: <span v-for="criteria in currentFilters"> {{ criteria }},</span>
             </div>
+            <div class="filters-title active-filters" v-if="noMatchedItems !== ''">
+                {{ noMatchedItems }}
+            </div>
         </div>
         <div class="project">
             <a v-for="item in projectItems" class="project--item__link" v-bind:href=item.link target="_blank">
@@ -50,7 +53,8 @@
                 projectItems: [],
                 projectItemsStore: [],
                 filters: ['JavaScript', 'HTML5', 'CSS', 'Art', 'Game' ],
-                currentFilters: []
+                currentFilters: [],
+                noMatchedItems: ''
             }
         },
         methods: {
@@ -63,6 +67,7 @@
             },
             clearFilters: function(){
                 this.currentFilters = []
+                this.noMatchedItems = ''
             }
         },
         mounted(){
@@ -77,14 +82,31 @@
         watch: {
             currentFilters: function(){
                 let criteria = this.currentFilters
-                let matchedItems = []
-                for(let i = 0; i < this.projectItems.length; i++){
-                    let match = criteria.every((criteria) => this.projectItems[i].categories.indexOf(criteria.toLowerCase()) >= 0)
-                    match ? matchedItems.push(this.projectItems[i]) : '';
+
+                // if there are filters applied, then filter
+                if (this.currentFilters.length > 0) {
+
+                    let matchedItems = this.projectItems.filter((project) => criteria.every((criteria) => project.categories.indexOf(criteria.toLowerCase()) >= 0))
+
+                    //if there are no matched items, empty out filteredItems and add 'No items found' to current filters
+                    if (matchedItems.length === 0) {
+                        this.projectItems = []
+
+                        // if there are no matches, display no matches message
+                        this.noMatchedItems = 'No matches found.'
+                    }
+
+                    // if there are matched items, display them
+                    if (matchedItems.length > 0) {
+                        this.projectItems = matchedItems
+                    }
+
                 }
 
-                let filteredItems = matchedItems.length === 0 ? this.projectItemsStore : matchedItems;
-                filteredItems.length === 0 ? this.filteredItems = this.projectItemsStore : this.projectItems = filteredItems;
+                // if there are no filters applied, display all items
+                if (this.currentFilters.length === 0) {
+                    this.projectItems = this.projectItemsStore
+                }
             }
         }
     }
