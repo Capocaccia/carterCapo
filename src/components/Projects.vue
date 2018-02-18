@@ -16,6 +16,9 @@
                     Clear Filters
                 </div>
             </div>
+            <div class="filters-title active-filters" v-if="currentFilter !== ''">
+                Active Filter: {{ currentFilter }}
+            </div>
         </div>
         <div class="project">
             <a v-for="item in projectItems" class="project--item__link" v-bind:href=item.link target="_blank">
@@ -56,7 +59,7 @@
                 e.srcElement.classList.toggle('active');
             },
             updateFilter: function(e) {
-                this.currentFilter = e.target.innerText.toLowerCase();
+                this.currentFilter = e.target.innerText;
             },
             clearFilter: function(){
                 this.currentFilter = ''
@@ -73,7 +76,7 @@
         },
         watch: {
             currentFilter: function(){
-                let filteredItems = this.projectItemsStore.filter((projectItem) => projectItem.categories.includes(this.currentFilter))
+                let filteredItems = this.projectItemsStore.filter((projectItem) => projectItem.categories.includes(this.currentFilter.toLowerCase()))
                 filteredItems.length === 0 ? this.projectItems = this.projectItemsStore : this.projectItems = filteredItems;
             }
         }
