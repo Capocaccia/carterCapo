@@ -64,7 +64,7 @@
         &__filter {
             display: flex;
             align-items: center;
-            color: $primary-color;
+            color: $quaternary-color;
             background-color: $secondary-color;
             padding: .5rem 1.25rem;
             border-radius: 5px;
@@ -73,6 +73,7 @@
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
+            border: 3px solid transparent;
             &.active {
                 border: 3px solid $quaternary-color;
                 background-color: darken($secondary-color, 10%);
