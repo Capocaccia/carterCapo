@@ -55,12 +55,16 @@
     align-items: center;
     width: 40vw;
     font-family: $primary-font;
+    @include phone-break {
+        width: 55vw;
+    }
     &-title {
         color: $quaternary-color;
         font-size: 20px;
     }
     &-group {
         display: flex;
+        flex-wrap: wrap;
         &__filter {
             display: flex;
             align-items: center;
@@ -74,6 +78,9 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
             border: 3px solid transparent;
+            @include phone-break {
+                padding: .25rem .75rem;
+            }
             &.active {
                 border: 3px solid $quaternary-color;
                 background-color: darken($secondary-color, 10%);
