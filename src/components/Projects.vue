@@ -12,12 +12,12 @@
                 <div class="filters-group__filter" v-for="filter in filters" v-on:click="updateFilter($event)">
                     {{ filter }}
                 </div>
-                <div class="filters--clear filters-group__filter" v-on:click="clearFilter()">
+                <div class="filters--clear filters-group__filter" v-on:click="clearFilters()">
                     Clear Filters
                 </div>
             </div>
-            <div class="filters-title active-filters" v-if="currentFilter !== ''">
-                Active Filter: {{ currentFilter }}
+            <div class="filters-title active-filters" v-if="currentFilters.length > 0">
+                Active Filter: <span v-for="criteria in currentFilters"> {{ criteria }},</span>
             </div>
         </div>
         <div class="project">
@@ -50,7 +50,7 @@
                 projectItems: [],
                 projectItemsStore: [],
                 filters: ['JavaScript', 'HTML5', 'CSS', 'Art', 'Game' ],
-                currentFilter: ''
+                currentFilters: []
             }
         },
         methods: {
@@ -59,10 +59,10 @@
                 e.srcElement.classList.toggle('active');
             },
             updateFilter: function(e) {
-                this.currentFilter = e.target.innerText;
+                this.currentFilters.includes(e.target.innerText) ? '' : this.currentFilters.push(e.target.innerText);
             },
-            clearFilter: function(){
-                this.currentFilter = ''
+            clearFilters: function(){
+                this.currentFilters = []
             }
         },
         mounted(){
@@ -75,9 +75,16 @@
             })
         },
         watch: {
-            currentFilter: function(){
-                let filteredItems = this.projectItemsStore.filter((projectItem) => projectItem.categories.includes(this.currentFilter.toLowerCase()))
-                filteredItems.length === 0 ? this.projectItems = this.projectItemsStore : this.projectItems = filteredItems;
+            currentFilters: function(){
+                let criteria = this.currentFilters
+                let matchedItems = []
+                for(let i = 0; i < this.projectItems.length; i++){
+                    let match = criteria.every((criteria) => this.projectItems[i].categories.indexOf(criteria.toLowerCase()) >= 0)
+                    match ? matchedItems.push(this.projectItems[i]) : '';
+                }
+
+                let filteredItems = matchedItems.length === 0 ? this.projectItemsStore : matchedItems;
+                filteredItems.length === 0 ? this.filteredItems = this.projectItemsStore : this.projectItems = filteredItems;
             }
         }
     }
