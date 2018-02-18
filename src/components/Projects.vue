@@ -16,10 +16,7 @@
                     Clear Filters
                 </div>
             </div>
-            <div class="filters-title active-filters" v-if="currentFilters.length > 0">
-                Active Filter: <span v-for="criteria in currentFilters"> {{ criteria }},</span>
-            </div>
-            <div class="filters-title active-filters" v-if="noMatchedItems !== ''">
+            <div class="filters-title active-filters" v-if="projectItems.length === 0">
                 {{ noMatchedItems }}
             </div>
         </div>
@@ -63,9 +60,22 @@
                 e.srcElement.classList.toggle('active');
             },
             updateFilter: function(e) {
-                this.currentFilters.includes(e.target.innerText) ? '' : this.currentFilters.push(e.target.innerText);
+                if(this.currentFilters.includes(e.target.innerText)) {
+                    e.target.classList.toggle('active')
+                    let filterToRemove = this.currentFilters.indexOf(e.target.innerText)
+                    this.currentFilters.splice(filterToRemove, 1)
+                } else {
+                    e.target.classList.toggle('active')
+                    this.currentFilters.push(e.target.innerText)
+                }
+
             },
             clearFilters: function(){
+
+                let filters = document.querySelectorAll('.filters-group__filter');
+                filters.forEach((filter) => {
+                    filter.classList.remove('active')
+                })
                 this.currentFilters = []
                 this.noMatchedItems = ''
             }
@@ -82,11 +92,10 @@
         watch: {
             currentFilters: function(){
                 let criteria = this.currentFilters
-
                 // if there are filters applied, then filter
                 if (this.currentFilters.length > 0) {
 
-                    let matchedItems = this.projectItems.filter((project) => criteria.every((criteria) => project.categories.indexOf(criteria.toLowerCase()) >= 0))
+                    let matchedItems = this.projectItemsStore.filter((project) => criteria.every((criteria) => project.categories.indexOf(criteria.toLowerCase()) >= 0))
 
                     //if there are no matched items, empty out filteredItems and add 'No items found' to current filters
                     if (matchedItems.length === 0) {
