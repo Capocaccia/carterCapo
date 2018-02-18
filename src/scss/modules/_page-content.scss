@@ -19,6 +19,7 @@
         height: 100%;
         width: 100%;
         background-color: rgba($primary-color, 0.7);
+        z-index: 10;
     }
     h2 {
         font-family: $primary-font;
