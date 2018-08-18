@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class=pageData.contentClass v-bind:style='{ backgroundImage: "url(" + pageData.background + ")", }'>
+  <div v-bind:class=pageData.contentClass :style='{ backgroundImage: "url(" + pageData.background + ")", }'>
     <h2>{{pageData.title}}</h2>
     <p class="tagline">{{pageData.tagline}}</p>
     <div class="main"></div>

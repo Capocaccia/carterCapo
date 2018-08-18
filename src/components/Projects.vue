@@ -1,5 +1,6 @@
 <template>
-    <div v-bind:class=pageData.contentClass v-bind:style='{ backgroundImage: "url(" + pageData.background + ")", }'>
+    <div :class=pageData.contentClass
+         :style='{ backgroundImage: "url(" + pageData.background + ")", }'>
         <h2>{{pageData.title}}</h2>
         <p class="tagline">{{pageData.tagline}}</p>
         <div class="main"></div>
@@ -21,7 +22,7 @@
             </div>
         </div>
         <div class="project">
-            <a v-for="item in projectItems" class="project--item__link" v-bind:href=item.link target="_blank">
+            <a v-for="item in projectItems" class="project--item__link" :href=item.link target="_blank">
                 <div class="project--item">
                     <h3 class="project--item__title">
                         {{item.title}}
@@ -29,7 +30,7 @@
                     <p class="project--item__description">
                         {{item.description}}
                     </p>
-                    <div class="background" v-bind:style="{ backgroundImage: 'url(' + item.image + ')' }">
+                    <div class="background" :style="{ backgroundImage: 'url(' + item.image + ')' }">
                     </div>
                 </div>
             </a>
@@ -49,7 +50,7 @@
                 pageData: [],
                 projectItems: [],
                 projectItemsStore: [],
-                filters: ['JavaScript', 'HTML5', 'CSS', 'Art', 'Game' ],
+                filters: ['JavaScript', 'HTML5', 'CSS', 'Art', 'Game', 'Firebase' ],
                 currentFilters: [],
                 noMatchedItems: ''
             }

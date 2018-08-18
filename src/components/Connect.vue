@@ -1,5 +1,5 @@
 <template>
-    <div v-bind:class=pageData.contentClass v-bind:style='{ backgroundImage: "url(" + pageData.background + ")", }'>
+    <div :class=pageData.contentClass :style='{ backgroundImage: "url(" + pageData.background + ")", }'>
         <h2>{{pageData.title}}</h2>
         <p class="tagline">{{pageData.tagline}}</p>
         <div class="main"></div>
@@ -10,7 +10,7 @@
                     {{item.title}}
                 </p>
                 <a class="project--item__link" v-bind:href=item.link>
-                    <img v-bind:src=item.icon v-bind:alt=item.email>
+                    <img :src=item.icon :alt=item.email>
                 </a>
             </div>
         </div>

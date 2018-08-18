@@ -1,11 +1,14 @@
 <template>
-    <div v-bind:class=pageData.contentClass v-bind:style='{ backgroundImage: "url(" + pageData.background + ")", }'>
+    <div :class=pageData.contentClass
+         :style='{ backgroundImage: "url(" + pageData.background + ")", }'>
         <h2>{{pageData.title}}</h2>
         <p class="tagline">{{pageData.tagline}}</p>
         <div class="main"></div>
         <div class="navicon" v-on:click="toggleMobile($event)"></div>
         <div class="qa">
-            <div v-for="item in qa" class="content-item" v-on:click="toggleAnswer($event)">
+            <div v-for="item in qa"
+                 class="content-item"
+                 v-on:click="toggleAnswer($event)">
                 <div class="content-item--question">
                     {{item.question}}
                 </div>
