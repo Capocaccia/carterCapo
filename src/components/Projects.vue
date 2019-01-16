@@ -49,7 +49,7 @@
                 pageData: [],
                 projectItems: [],
                 projectItemsStore: [],
-                filters: ['JavaScript', 'HTML5', 'CSS', 'Art', 'Game' ],
+                filters: ['JavaScript', 'HTML5', 'CSS', 'Art', 'Game', 'Vue' ],
                 currentFilters: [],
                 noMatchedItems: ''
             }
