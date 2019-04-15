@@ -1,6 +1,6 @@
 # y
 
-> Refactor of carterCapo.com in vue.js
+> Refactor of capocaccia.dev in vue.js
 
 ## Build Setup
 
