@@ -2,8 +2,10 @@
   "name": "cartercapov2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/Capocaccia/carterCapo",
   "dependencies": {
     "firebase": "^5.9.2",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -11,6 +13,8 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
