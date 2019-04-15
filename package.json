@@ -2,7 +2,7 @@
   "name": "cartercapov2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Capocaccia/carterCapo",
+  "homepage": "https://capocaccia.dev/",
   "dependencies": {
     "firebase": "^5.9.2",
     "gh-pages": "^2.0.1",
