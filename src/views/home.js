@@ -1,5 +1,5 @@
-import db from '../firebaseConfig'
 import React, { Component } from 'react';
+import axios from 'axios';
 import toggleMobile from '../mixins/toggleMobile'
 
 class Home extends Component {
@@ -10,13 +10,27 @@ class Home extends Component {
         }
     }
     componentDidMount() {
-        db.database().ref().once('value').then(function(snapshot){
-            return snapshot.child('home').val();
-        }).then((result) => {
+        axios({
+            url: 'http://localhost:4000/',
+            method: 'post',
+            data: {
+              query: `
+              query {
+                page(title: "Carter Capocaccia") {
+                    background,
+                    contentClass,
+                    stylingClasses,
+                    tagline,
+                    title
+                  }
+              }
+                `
+            }
+          }).then((result) => {
             this.setState({
-                pageData: result.page
+                pageData: result.data.data.page
             });
-        })
+          });
     }
     render() {
         return (

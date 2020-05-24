@@ -1,5 +1,5 @@
-import db from '../firebaseConfig'
 import React, {Component} from 'react'
+import axios from 'axios';
 import toggleMobile from "../mixins/toggleMobile";
 
 class Connect extends Component {
@@ -11,14 +11,33 @@ class Connect extends Component {
         }
     }
     componentDidMount() {
-        db.database().ref().once('value').then(function(snapshot){
-            return snapshot.child('contact').val();
-        }).then((result) => {
+        axios({
+            url: 'http://localhost:4000/',
+            method: 'post',
+            data: {
+              query: `
+              query {
+                page(title: "Connect") {
+                    background,
+                    contentClass,
+                    stylingClasses,
+                    tagline,
+                    title
+                },
+                contactItems {
+                    icon,
+                    link,
+                    title
+                }
+              }
+                `
+            }
+          }).then((result) => {
             this.setState({
-                pageData: result.page,
-                contactItems: result.contactItems
+                pageData: result.data.data.page,
+                contactItems: result.data.data.contactItems
             });
-        })
+          });
     }
     render() {
         let items = this.state.contactItems.map((item, idx) => {

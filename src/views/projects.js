@@ -1,5 +1,5 @@
-import db from '../firebaseConfig'
 import React, { Component } from 'react';
+import axios from 'axios';
 import Projectlist from '../components/projectsList'
 import toggleMobile from '../mixins/toggleMobile'
 
@@ -13,15 +13,34 @@ class Projects extends Component {
         }
     }
     componentDidMount() {
-        db.database().ref().once('value').then(function(snapshot){
-            return snapshot.child('projects').val();
-        }).then((result) => {
+        axios({
+            url: 'http://localhost:4000/',
+            method: 'post',
+            data: {
+              query: `
+              query {
+                page(title: "Projects") {
+                    background,
+                    contentClass,
+                    stylingClasses,
+                    tagline,
+                    title
+                },
+                projectItems {
+                    description,
+                    image,
+                    link,
+                    title
+                }
+              }
+                `
+            }
+          }).then((result) => {
             this.setState({
-                pageData: result.page,
-                projectItems: result.projectItems,
-                projectItemsStore: result.projectItems
+                pageData: result.data.data.page,
+                projectItems: result.data.data.projectItems
             });
-        })
+          });
     }
     render() {
         return (

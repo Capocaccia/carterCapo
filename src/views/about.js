@@ -1,5 +1,5 @@
-import db from '../firebaseConfig'
 import React, { Component } from 'react';
+import axios from 'axios';
 import Qaitems from '../components/qaItem'
 import toggleMobile from "../mixins/toggleMobile";
 
@@ -12,14 +12,32 @@ class About extends Component {
         }
     }
     componentDidMount() {
-        db.database().ref().once('value').then(function(snapshot){
-            return snapshot.child('about').val();
-        }).then((result) => {
+        axios({
+            url: 'http://localhost:4000/',
+            method: 'post',
+            data: {
+              query: `
+              query {
+                page(title: "About") {
+                    background,
+                    contentClass,
+                    stylingClasses,
+                    tagline,
+                    title
+                },
+                aboutItems {
+                    answer,
+                    question
+                }
+              }
+                `
+            }
+          }).then((result) => {
             this.setState({
-                pageData: result.page,
-                qa: result.aboutItems
-        });
-        })
+                pageData: result.data.data.page,
+                qa: result.data.data.aboutItems
+            });
+          });
     }
     render() {
         return (
