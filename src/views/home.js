@@ -1,34 +1,33 @@
-import db from '../firebaseConfig'
-import React, { Component } from 'react';
-import toggleMobile from '../mixins/toggleMobile'
+import db from "../firebaseConfig";
+import React, { useEffect, useState } from "react";
+import toggleMobile from "../mixins/toggleMobile";
 
-class Home extends Component {
-    constructor() {
-        super()
-        this.state = {
-            pageData: null
-        }
-    }
-    componentDidMount() {
-        db.database().ref().once('value').then(function(snapshot){
-            return snapshot.child('home').val();
-        }).then((result) => {
-            this.setState({
-                pageData: result.page
-            });
-        })
-    }
-    render() {
-        return (
-            <div className={this.state.pageData ? this.state.pageData.contentClass : ''}
-                 style={{backgroundImage: `url(${this.state.pageData ? this.state.pageData.background : ''})`}}>
-                <h2>{this.state.pageData ? this.state.pageData.title : ''}</h2>
-                <p className="tagline">{this.state.pageData ? this.state.pageData.tagline : ''}</p>
-                <div className="main"></div>
-                <div className="navicon" onClick={() => toggleMobile()}></div>
-            </div>
-        )
-    }
+function Home() {
+  const [pageData, setPageData] = useState([]);
+
+  useEffect(() => {
+    db.database()
+      .ref()
+      .once("value")
+      .then(function(snapshot) {
+        return snapshot.child("home").val();
+      })
+      .then(result => {
+        setPageData(result.page);
+      });
+  }, [pageData]);
+
+  return (
+    <div
+      className={pageData ? pageData.contentClass : ""}
+      style={{ backgroundImage: `url(${pageData ? pageData.background : ""})` }}
+    >
+      <h2>{pageData ? pageData.title : ""}</h2>
+      <p className="tagline">{pageData ? pageData.tagline : ""}</p>
+      <div className="main"></div>
+      <div className="navicon" onClick={() => toggleMobile()}></div>
+    </div>
+  );
 }
 
-export default Home
+export default Home;
