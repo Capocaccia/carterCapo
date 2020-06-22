@@ -1,6 +1,6 @@
 import React from "react";
 
-function qaItem() {
+function qaItem(props) {
   const questionClass = "content-item--question";
   const answerClass = "content-item--answer";
 
@@ -19,7 +19,7 @@ function qaItem() {
     return `${questionClass} ${questionClass}-${idx}`;
   }
 
-  const items = this.props.qas.map((qa, idx) => (
+  const items = props.qas.map((qa, idx) => (
     <div key={idx} className="content-item" onClick={() => toggleAnswer(idx)}>
       <div className={makeQuestionClassName(idx)}>{qa.question}</div>
       <div className={makeAnswerClassName(idx)}>{qa.answer}</div>
