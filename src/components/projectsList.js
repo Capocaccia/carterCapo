@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function projectsList(props) {
+function ProjectsList(props) {
   const [projectItems, setProjectItems] = useState([]);
   const [filterApplied, setFilters] = useState([]);
 
@@ -102,4 +102,4 @@ function projectsList(props) {
   );
 }
 
-export default projectsList;
+export default ProjectsList;
