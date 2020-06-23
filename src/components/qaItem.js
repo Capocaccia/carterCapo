@@ -1,6 +1,6 @@
 import React from "react";
 
-function qaItem(props) {
+function QaItem(props) {
   const questionClass = "content-item--question";
   const answerClass = "content-item--answer";
 
@@ -29,4 +29,4 @@ function qaItem(props) {
   return <div>{items}</div>;
 }
 
-export default qaItem;
+export default QaItem;
