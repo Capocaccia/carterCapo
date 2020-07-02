@@ -20,7 +20,7 @@ context('Actions', () => {
       .and('not.be.visible')
   })
 
-  it.only('Filters projects', () => {
+  it('Filters projects', () => {
     cy.visit('http://localhost:3000/projects')
 
     cy.get('.project--item').then(($pjs) => {
@@ -31,7 +31,7 @@ context('Actions', () => {
       .click()
       .should('not.have.class', 'active')
       .click()
-      
+
       cy.get('.project--item')
       .should('have.length.lessThan', $pjs.length)
     })
