@@ -21,5 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
 .idea
+
+# testing
+/cypress/videos/*
+cypress.json*
