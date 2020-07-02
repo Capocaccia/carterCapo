@@ -56,6 +56,7 @@ context('Assertions', () => {
         .should('have.length.greaterThan', 0)
       cy.get('.content-item--answer')
         .should('have.length.greaterThan', 0)
+        .should('not.be.visible')
     })
 
     it('Projects page should contain header and tagline', () => {
@@ -82,8 +83,35 @@ context('Assertions', () => {
       cy.get('.project--item__description')
         .should('not.be.empty')
       
-        cy.get('.project--item__title')
+      cy.get('.project--item__title')
         .should('not.be.empty')
+    })
+
+    it('Contact page should contain header and tagline', () => {
+      cy.visit('http://localhost:3000/connect')
+
+      cy.get('h2')
+        .should('be.visible')
+        .and('have.text', 'Connect')
+      cy.get('.tagline')
+        .should('be.visible')
+        .and('have.text', 'Connect')
+    })
+
+    it('Contact page should contact contact items', () => {
+      cy.visit('http://localhost:3000/connect')
+
+      cy.get('.contactItem')
+        .should('have.length.greaterThan', 0)
+        .and('be.visible')
+
+      cy.get('.contactItem').children('.title')
+        .should('have.length.greaterThan', 0)
+        .and('be.visible')
+
+      cy.get('.project--item__link')
+        .should('have.length.greaterThan', 0)
+        .and('have.attr', 'href')
     })
   })
 })
