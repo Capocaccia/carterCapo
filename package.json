@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://capocaccia.dev/",
   "dependencies": {
+    "cypress": "^4.9.0",
     "firebase": "^7.15.4",
     "gh-pages": "^3.1.0",
     "node-sass": "^4.14.1",
@@ -18,7 +19,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress": "cypress open",
+    "precommit": "cypress run --headless"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,5 +36,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "husky": "^4.2.5"
+  }
 }
