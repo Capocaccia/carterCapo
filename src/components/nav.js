@@ -15,11 +15,11 @@ function AppRouter() {
                 <Link to="/about" className="section Carter Capocaccia section-second">
                     <p className="title">About</p>
                 </Link>
-                <Link to="/connect" className="section Carter Capocaccia section-third">
-                    <p className="title"> Connect </p>
-                </Link>
                 <Link to='/projects' className="section Carter Capocaccia section-first">
                     <p className="title"> Projects </p>
+                </Link>
+                <Link to="/connect" className="section Carter Capocaccia section-third">
+                    <p className="title"> Connect </p>
                 </Link>
             </header>
             <Route path="/" exact component={Home} />
