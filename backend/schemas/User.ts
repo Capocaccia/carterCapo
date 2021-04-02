@@ -13,6 +13,5 @@ export const User = list({
       isUnique: true,
     }),
     password: password(),
-    // TODO : add roles cart and orders
   },
 });
