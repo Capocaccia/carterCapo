@@ -1,0 +1,125 @@
+{
+  "name": "cartercapov2",
+  "author": "Carter Capocaccia",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://capocaccia.dev/",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next -p 7777",
+    "build": "next build",
+    "start": "next start -p 7777",
+    "test": "NODE_ENV=test jest --watch",
+    "cypress": "cypress open",
+    "precommit": "cypress run --headless"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "wesbos"
+    ]
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ]
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "@apollo/client": "^3.3.8",
+    "@apollo/link-error": "^2.0.0-beta.3",
+    "@apollo/react-ssr": "^4.0.0",
+    "cypress": "^4.9.0",
+    "date-fns": "^2.16.1",
+    "downshift": "^6.0.6",
+    "graphql": "^15.4.0",
+    "graphql-tag": "^2.11.0",
+    "lodash.debounce": "^4.0.8",
+    "next": "^10.0.3",
+    "next-with-apollo": "^5.1.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-transition-group": "^4.4.1",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@apollo/react-testing": "^4.0.0",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.3.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-wesbos": "^1.0.1",
+    "eslint-plugin-html": "^6.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.2.5",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "react-test-renderer": "^17.0.1"
+  }
+}
