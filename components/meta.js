@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import { AUTHOR, HOME_OG_IMAGE_URL } from '../lib/constants'
 
 export default function Meta() {
   return (
@@ -34,7 +34,7 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`A website belonging to Carter Capocaccia`}
+        content={`A website belonging to ${AUTHOR}`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
