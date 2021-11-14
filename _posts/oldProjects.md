@@ -21,10 +21,13 @@ This is a list from a few of my past projects. While im not proud of all the cod
 - [Game Leaderboard - Our house played uno a lot. Vue app driven by Firebase.](https://capocaccia.github.io/gameLeaderboard/#/)
 - [ToDo List - VueJS app driven by Firebase.](https://capocaccia.github.io/toDoList/)
 
-## JS Apps
+## JS Apps - Written in React, Vue, or vanilla JS
 
 - Lots of JS apps are on [my GitHub](https://github.com/Capocaccia)
   -- Thanks [WesBos](https://javascript30.com/)!
+
+## Games! - Once upon a time I played with the [Phaser](https://phaser.io/) framework
+- [Cloud Runner](http://capocaccia.github.io/CloudRunner/) 
 
 ## Open Source
 
