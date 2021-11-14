@@ -7,7 +7,7 @@ export default function Intro() {
         Carter Capocaccia.
       </h1>
       <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        Memphian. Developer. QA Engineer. Husband. Father.
+        Husband. Father. Developer. QE Automation Manager @ Hilton. 
       </h4>
     </section>
   )
