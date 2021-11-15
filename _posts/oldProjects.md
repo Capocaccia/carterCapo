@@ -10,15 +10,15 @@ ogImage:
   url: "/assets/blog/oldProjects/cover.jpg"
 ---
 
-This is a list from a few of my past projects. While im not proud of all the code written in some of these, they are a great reminder of where I came from. I put the work in to make them happen so here they are!
+I have put together a small list with a few of my past projects. I'm not proud of all the code written in some of these projects. However, they are a great reminder of my growth. I put the work in to make them happen. Here they are!
 
 - https://github.com/Capocaccia
 
 ## Fullstack Apps
 
-- [Blippz - A fullstack Laravel and Vue app that was deployed to Digital Ocean - (No Longer Live)](https://github.com/Capocaccia/blippz)
+- [Blippz - A full-stack Laravel and Vue app that I deployed to Digital Ocean - (No Longer Live)](https://github.com/Capocaccia/blippz)
 - [capocaccia.dev - The old site was bootstrapped by Create-React-App and driven by Firebase](https://github.com/Capocaccia/carterCapo/tree/react)
-- [Game Leaderboard - Our house played uno a lot. Vue app driven by Firebase.](https://capocaccia.github.io/gameLeaderboard/#/)
+- [Game Leaderboard - Our house played Uno a lot. This is a Vue app driven by Firebase.](https://capocaccia.github.io/gameLeaderboard/#/)
 - [ToDo List - VueJS app driven by Firebase.](https://capocaccia.github.io/toDoList/)
 
 ## JS Apps - Written in React, Vue, or vanilla JS
@@ -26,8 +26,9 @@ This is a list from a few of my past projects. While im not proud of all the cod
 - Lots of JS apps are on [my GitHub](https://github.com/Capocaccia)
   -- Thanks [WesBos](https://javascript30.com/)!
 
-## Games! - Once upon a time I played with the [Phaser](https://phaser.io/) framework
-- [Cloud Runner](http://capocaccia.github.io/CloudRunner/) 
+## Games! - Once upon a time, I played with the [Phaser](https://phaser.io/) framework
+
+- [Cloud Runner](http://capocaccia.github.io/CloudRunner/)
 
 ## Open Source
 

@@ -10,7 +10,7 @@ ogImage:
   url: "/assets/blog/genericTechImage.jpg"
 ---
 
-This is stuff that I use frequently in my life. None of the links below are affiliate links. If you like this kind of thing, check out [https://uses.tech/](https://uses.tech/)
+Below is a list of a bunch of stuff that I frequently use in my life. None of the links below are affiliate links. If you like this kind of thing, check out [https://uses.tech/](https://uses.tech/)
 
 ## Hardware
 
