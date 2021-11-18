@@ -1,6 +1,6 @@
 ---
 title: "Easy mocking of API Requests in Cypress with Mock Service Worker."
-excerpt: "Mock Service Worker is a single tool we can use to mock API requests in unit tests, end-to-end tests, and our application. In this example, Cypress starts the service worker on its own."
+excerpt: "Mock Service Worker is a single tool we can use to mock API requests in unit tests, end-to-end tests, and our application. In this example, Cypress starts the worker on its own."
 coverImage: "/assets/blog/cypressMsw/cypressMsw.jpeg"
 date: "2021-11-18T05:35:07.322Z"
 author:
@@ -19,7 +19,7 @@ The [cy.intercept](https://docs.cypress.io/api/commands/intercept) API is fantas
 
 ## Why is Cypress starting up the mock server important?
 
-It is common practice to utilize an environmental variable to start your mock server. Typically this is utilized in the following style:
+It is common practice to utilize an environmental variable to start MSW. Typically this is utilized in the following style:
 ```javascript
 //if we are in develoment mode, use mocks
 if (process.env.NODE_ENV === 'development') {
@@ -28,11 +28,11 @@ if (process.env.NODE_ENV === 'development') {
 }
 ```
 
-This pattern requires additional configuration and is another configuration item you can forget when running your tests locally or in CI. If the application is not initialized with this ENV var in place it will cause unexpected behavior in your tests. A way to avoid this problem is for your tests to start the mock server itself.
+This pattern requires additional configuration and is another configuration item you can forget when running your tests locally or in CI. If the application is not initialized with this ENV var in place it will cause unexpected behavior in your tests. A way to avoid this problem is for your tests to start MSW itself.
 
 ## Using Cypress Events
 
-By leveraging the Cypress events API, we can start our mock server using an async method. Using Async/Await here ensures our server is running before our tests execute.
+By leveraging the Cypress events API, we can start MSW using an async method. Using Async/Await here ensures MSW is running before our tests execute.
 
 ```javascript
 //cypress/support/index.js
@@ -45,11 +45,11 @@ Cypress.on('test:before:run:async', async () => {
 
 ## End Result
 
-Using this pattern, when our tests execute, Cypress will take ownership of starting the mock server and does not rely upon external configuration to start MSW. We have reduced dependency on our applications configuration and thats always a good thing, right?!
+Using this pattern, when our tests execute, Cypress will take ownership of starting MSW and does not rely upon external configuration. We have reduced dependency on our applications configuration and thats always a good thing, right?!
 
 ## Things to watch out for
 
-This pattern does expose a new problem. If my application has already started the mock service worker, how do I avoid starting it again in Cypress? When starting the service worker from the application, we should attach the worker and mocking API to the browser window. We can use this to conditionally start MSW in Cypress.
+This pattern does expose a new problem. If my application has already started MSW, how do I avoid starting it again in Cypress? When starting MSW from the application, we should attach the worker and mocking API to the browser window. We can use this to conditionally start MSW in Cypress.
 
 [MSW Docs](https://mswjs.io/docs/api/setup-worker/use#examples)
 
@@ -82,7 +82,7 @@ Cypress.on('test:before:run:async', async () => {
 
 ## Voilà!
 
-We have now intelligently started our mock service worker when and where we need it.  We can now use a single tool for mocking API requests in our application, our unit tests, and our end-to-end tests!
+We have now intelligently started MSW when and where we need it.  We can now use a single tool for mocking API requests in our application, our unit tests, and our end-to-end tests!
 
 ___
 
