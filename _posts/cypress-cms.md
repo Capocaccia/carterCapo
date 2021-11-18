@@ -14,6 +14,7 @@ ogImage:
 
 End-to-end tests are dependent upon an applications' UI. With this dependency, the tests have to stay up to date with a shifting UI. What if we generated tests based on the UI? What would this look like? In this example, I explore test generation based on a CMS configured layout provided to the application via an API.
 
+___
 ### Data Gathering
 
 We can use the [Cypress Request API](https://docs.cypress.io/api/commands/request) to retrieve the page layout. In this step, we gather the page layout from the CMS via the API. Now we know which components we can expect to be on the page.
@@ -147,6 +148,8 @@ Now our test builds itself! Based on the layout information returned from the CM
 ## Thanks
 
 If you learned anything from this, or want to share it yourself, go ahead! I ask that you include a link to my website when you share. If you wish to contact me, my information is in the footer!
+
+___
 
 ## Uses
 
