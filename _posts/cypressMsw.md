@@ -17,7 +17,7 @@ ___
 
 The [cy.intercept](https://docs.cypress.io/api/commands/intercept) API is fantastic.  However, it is an API that is specific to Cypress. When using MSW, we do lose some functionality of cy.intercept. However, we gain the ability to use a single library in Unit tests, End-to-End tests, and our applications UI. See, MSW is not only a testing tool. It is a standalone network request mocking library. That means we can develop an entire UI and scaffold out a backend API using mock data.
 
-## Why is Cypress starting up the mock server important?
+## Why is Cypress starting MSW important?
 
 It is common practice to utilize an environmental variable to start MSW. Typically this is utilized in the following style:
 ```javascript
