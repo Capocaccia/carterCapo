@@ -17,7 +17,10 @@
     "remark-html": "13.0.1"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.2",
     "autoprefixer": "^10.2.1",
+    "cypress": "^9.1.1",
+    "jest": "^27.4.3",
     "postcss": "^8.2.4",
     "tailwindcss": "^2.0.2"
   }
