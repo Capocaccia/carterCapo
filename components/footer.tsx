@@ -18,6 +18,7 @@ const Footer = () => {
             <a
               href="https://www.linkedin.com/in/capocaccia/"
               target="_blank"
+              rel="noreferrer"
               className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
             >
               LinkedIn
