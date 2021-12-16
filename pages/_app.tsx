@@ -1,13 +1,14 @@
+import { AppProps } from 'next/app'
 import '../styles/index.css'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import * as ga from '../lib/ga'
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: string) => {
       ga.pageview(url)
     }
     //When the component is mounted, subscribe to router changes
@@ -20,6 +21,5 @@ export default function MyApp({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
-
   return <Component {...pageProps} />
 }

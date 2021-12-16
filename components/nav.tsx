@@ -7,12 +7,12 @@ export default function Nav() {
   const router = useRouter();
 
   return (
-    <nav className="flex-row md:flex-row flex items-center md:justify-between mt-4 mb-16 md:mb-12">
+    <nav data-testid="nav-container" className="flex-row md:flex-row flex items-center md:justify-between mt-4 mb-16 md:mb-12">
       <div>
         {router.route !== '/' && 
         <p className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight">
           <Link href="/">
-            <a>Carter Capocaccia</a>
+            <a data-testid="home-link">Carter Capocaccia</a>
           </Link>
         </p>
         }

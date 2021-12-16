@@ -5,16 +5,21 @@ import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
+import Post from '../types/post'
 import Nav from '../components/nav'
 
-export default function Index({ allPosts }) {
+type Props = {
+  allPosts: Post[]
+}
+
+const Index = ({ allPosts }: Props) => {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
     <>
       <Layout>
         <Head>
-          <title>Capocaccia.dev</title>
+          <title data-testid="page-title">Capocaccia.dev</title>
         </Head>
         <Container>
           <Nav/>
@@ -36,7 +41,9 @@ export default function Index({ allPosts }) {
   )
 }
 
-export async function getStaticProps() {
+export default Index
+
+export const getStaticProps = async () => {
   const allPosts = getAllPosts([
     'title',
     'date',
