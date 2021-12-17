@@ -19,13 +19,9 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
-          start: npm run start'
-          browser: chrome
+          start: npm start
           record: true
-          parallel: true
-          group: "UI - Chrome"
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        env: ${{ secrets.CYPRESS_RECORD_KEY }}
   deployment:
     runs-on: ubuntu-latest
 
