@@ -21,7 +21,8 @@ jobs:
           build: npm run build
           start: npm start
           record: true
-        env: ${{ secrets.CYPRESS_RECORD_KEY }}
+        env:
+        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   deployment:
     runs-on: ubuntu-latest
 
