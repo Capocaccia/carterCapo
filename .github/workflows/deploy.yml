@@ -19,7 +19,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
-          start: npm e2e:run'
+          start: npm run start'
           browser: chrome
           record: true
           parallel: true
