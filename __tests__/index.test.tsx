@@ -53,7 +53,7 @@
         expect(heroPostWrapper.getByText(formattedDate)).toBeInTheDocument();
         expect(within(heroPostWrapper.getByRole('heading', {level: 3})).getByRole('link').getAttribute('href')).toEqual(`/posts/${slug}`);
         expect(heroPostWrapper.getByTestId('avatar-author').textContent).toEqual(author.name)
-        expect(heroPostWrapper.getByTestId('avatar-image').getAttribute('src')).toEqual(author.picture)
+        expect(heroPostWrapper.getByTestId('avatar-image').getAttribute('src')).toBeTruthy()
         expect(heroPostWrapper.getByTestId('post-cover-image').getAttribute('src')).toBeTruthy();
         expect(heroPostWrapper.getByTestId('hero-post-excerpt').textContent).toEqual(excerpt);
 
@@ -67,7 +67,7 @@
             expect(currentPost.getByRole('heading', {level: 3}).textContent).toEqual(restOfThePosts[idx].title);
             expect(within(currentPost.getByRole('heading', {level: 3})).getByRole('link').getAttribute('href')).toEqual(`/posts/${restOfThePosts[idx].slug}`);
             expect(currentPost.getByTestId('avatar-author').textContent).toEqual(restOfThePosts[idx].author.name)
-            expect(currentPost.getByTestId('avatar-image').getAttribute('src')).toEqual(restOfThePosts[idx].author.picture)
+            expect(currentPost.getByTestId('avatar-image').getAttribute('src')).toBeTruthy()
             expect(currentPost.getByTestId('post-cover-image').getAttribute('src')).toBeTruthy();
             expect(currentPost.getByTestId('post-excerpt').textContent).toEqual(restOfThePosts[idx].excerpt);
         })
