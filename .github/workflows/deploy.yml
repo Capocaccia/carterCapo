@@ -3,7 +3,7 @@ name: Cypress and Vercel Deployment
 on:
   push:
     branches:
-      - main
+      - master
 
   workflow_dispatch:
 
