@@ -1,4 +1,4 @@
-context("basic one", () => {
+context("Capocaccia.dev", () => {
   describe("a basic test", () => {
     beforeEach(() => {
       cy.visit("/");
@@ -27,7 +27,7 @@ context("basic one", () => {
       cy.location("href").should("include", "#footer");
     });
 
-    it.only("All links should have HREF populated", () => {
+    it("All links should have HREF populated", () => {
       cy.get("a").each((link) => {
         cy.wrap(link).invoke("attr", "href").should("not.be.empty");
       });
