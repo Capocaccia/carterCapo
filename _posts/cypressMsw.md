@@ -1,13 +1,13 @@
 ---
 title: "Easy mocking of API Requests in Cypress with Mock Service Worker."
 excerpt: "Mock Service Worker is a single tool we can use to mock API requests in unit tests, end-to-end tests, and our application. In this example, Cypress starts the worker on its own."
-coverImage: "/assets/blog/cypressMsw/cypressMsw.jpeg"
+coverImage: "/assets/blog/cypressMsw/cover.jpeg"
 date: "2021-11-18T05:35:07.322Z"
 author:
   name: Carter Capocaccia
   picture: "/assets/blog/authors/cc.svg"
 ogImage:
-  url: "/assets/blog/cypressMsw/cypressMsw.jpeg"
+  url: "/assets/blog/cypressMsw/cover.jpeg"
 ---
 
 [Example Repo](https://github.com/Capocaccia/cypressMswExample)
