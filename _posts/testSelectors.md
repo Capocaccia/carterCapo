@@ -1,5 +1,5 @@
 ---
-title: "How should I access DOM nodes when testing? A guide."
+title: "Effective DOM selector patterns. Interact like a user."
 excerpt: "There are so many ways now to retrieve a DOM node during a test. In this article I rank a few of the more popular methods and provide my opinion as to which ones are viable solutions."
 coverImage: "/assets/blog/testSelectors/cover.jpeg"
 date: "2021-12-30T05:35:07.322Z"
