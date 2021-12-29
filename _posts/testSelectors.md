@@ -11,11 +11,12 @@ ogImage:
 ---
   When writing tests that interact with your UI, you will likely utilize DOM nodes to isolate elements of your application and perform actions or assertions with those elements or contents thereof. In this post, I rank DOM node selectors styles into three "tiers" and discuss why I favor some over others. Using poor selectors is akin to building your house upon sand. You can build a mansion of a test suite using poor selectors, but the test suite will crumble violently and require constant maintenance.
 
-  I hope your take away from this post that selectors needs to be the following:
-
+  I hope your take away from this post is that your selectors should be:
+  
     1. Reliable
     2. Easily maintained
     3. Interacting with your DOM like your user does
+
 ## **Top Tier:**
 ________________
 
