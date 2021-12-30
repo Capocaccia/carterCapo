@@ -1,13 +1,13 @@
 ---
 title: "Cypress testing CMS configured layouts."
 excerpt: "When testing CMS configured layouts, you have an edge. In this post, I discuss how I create tests for CMS configured layouts."
-coverImage: "/assets/blog/cypress-cms/cover.jpg"
+coverImage: "/assets/blog/cypress-cms/cover.jpeg"
 date: "2021-11-11T05:35:07.322Z"
 author:
   name: Carter Capocaccia
   picture: "/assets/blog/authors/cc.svg"
 ogImage:
-  url: "/assets/blog/cypress-cms/cover.jpg"
+  url: "/assets/blog/cypress-cms/cover.jpeg"
 ---
 
 ## CMS driven layouts offer new challenges and new opportunities

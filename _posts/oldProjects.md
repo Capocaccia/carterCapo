@@ -1,13 +1,13 @@
 ---
 title: "Projects"
 excerpt: "A few projects from the past."
-coverImage: "/assets/blog/oldProjects/cover.jpg"
+coverImage: "/assets/blog/oldProjects/cover.jpeg"
 date: "2021-11-11T05:35:07.322Z"
 author:
   name: Carter Capocaccia
   picture: "/assets/blog/authors/cc.svg"
 ogImage:
-  url: "/assets/blog/oldProjects/cover.jpg"
+  url: "/assets/blog/oldProjects/cover.jpeg"
 ---
 
 I have put together a small list with a few of my past projects. I'm not proud of all the code written in some of these projects. However, they are a great reminder of my growth. I put the work in to make them happen. Here they are!
