@@ -13,9 +13,9 @@ ogImage:
 
   I hope your take away from this post is that your selectors should be:
   
-    1. Reliable
-    2. Easily maintained
-    3. Interacting with your DOM like your user does
+  1. Reliable
+  2. Easily maintained
+  3. Interacting with your DOM like your user does
 
 ## **Top Tier:**
 ________________
