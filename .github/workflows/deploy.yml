@@ -26,10 +26,9 @@ jobs:
           path: public/
   test:
     needs: build
-    name: Cypress
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Artifact
       - uses: actions/checkout@v2
       - uses: actions/download-artifact@main
         with:
