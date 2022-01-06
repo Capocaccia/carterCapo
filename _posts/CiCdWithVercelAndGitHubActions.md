@@ -1,13 +1,13 @@
 ---
 title: "QA and CI/CD with Vercel and GitHub Actions"
 excerpt: "Want to see the QA tools and workflows I use for this site? Check it out here."
-coverImage: "/assets/blog/qaWorkflow/qaWorkflow.jpeg"
-date: "2022-01-04T05:35:07.322Z"
+coverImage: "/assets/blog/ciCd/quality.jpeg"
+date: "2022-01-07T05:35:07.322Z"
 author:
   name: Carter Capocaccia
   picture: "/assets/blog/authors/cc.svg"
 ogImage:
-  url: "/assets/blog/qaWorkflow/qaWorkflow.jpeg"
+  url: "/assets/blog/ciCd/quality.jpeg"
 ---
 
 
