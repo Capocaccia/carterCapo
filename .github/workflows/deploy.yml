@@ -37,6 +37,7 @@ jobs:
       - name: Run Cypress
         run: |
           npm install
+          npm run build
           npm start
           npm e2e:run --record=true
         env:
