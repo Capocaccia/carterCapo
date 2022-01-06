@@ -34,8 +34,7 @@ jobs:
         with:
           name: webpack artifacts
           path: public
-      - name: Cypress run
-         run: |
+        run: |
           npm start
           npm e2e:run --record=true
         env:
