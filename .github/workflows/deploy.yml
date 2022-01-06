@@ -1,9 +1,6 @@
-name: Build and Run Cypress
+name: Cypress run
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
@@ -11,37 +8,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build
+  cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: npm install and build webpack
-        run: |
-          npm install
-          npm run build
-      - uses: actions/upload-artifact@main
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
         with:
-          name: webpack artifacts
-          path: public/
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@main
-        with:
-          name: webpack artifacts
-          path: public
-      - name: Run Cypress
-        run: |
-          npm install
-          npm run build
-          npm start
-          npm e2e:run --record=true
+          build: npm run build
+          start: npm start
+          record: true
         env:
-          # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          # pass GitHub token to allow accurately detecting a build vs a re-run build
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
