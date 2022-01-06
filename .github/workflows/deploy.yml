@@ -35,9 +35,9 @@ jobs:
           name: webpack artifacts
           path: public
       - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          record: true
+         run: |
+          npm start
+          npm e2e:run --record=true
         env:
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
