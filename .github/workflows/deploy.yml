@@ -29,11 +29,13 @@ jobs:
     name: Cypress
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Artifact
       - uses: actions/checkout@v2
       - uses: actions/download-artifact@main
         with:
           name: webpack artifacts
           path: public
+      - name: Run Cypress
         run: |
           npm start
           npm e2e:run --record=true
