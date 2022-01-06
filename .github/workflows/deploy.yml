@@ -1,4 +1,4 @@
-name: Cypress run
+name: Build and Run Cypress
 
 on:
   push:
