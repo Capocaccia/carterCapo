@@ -11,18 +11,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  cypress-run:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+      - uses: actions/checkout@v2
+      - name: npm install and build webpack
+        run: |
+          npm install
+          npm run build
+      - uses: actions/upload-artifact@main
         with:
-          build: npm run build
-          start: npm start
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          name: webpack artifacts
+          path: public/
