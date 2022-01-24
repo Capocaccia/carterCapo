@@ -30,9 +30,14 @@ I can use a native Cypress methods to populate and submit the login form. Here i
 
 ```javascript
 it('Completes login flow', () => {
-  cy.get('input[name="username"]').type('Carter')
-  cy.get('input[name="password"]').type('abc123')
-  cy.get('button[type="submit"]').click()
+  cy.get('input[name="username"]')
+    .type('Carter')
+
+  cy.get('input[name="password"]')
+    .type('abc123')
+
+  cy.get('button[type="submit"]')
+    .click()
 })
 ```
 
@@ -42,9 +47,14 @@ Testing Library offers a curated list of selectors which rely upon accessibility
 
 ```javascript
 it('Completes login flow', () => {
-  cy.findByLabelText('Username').type('Carter')
-  cy.findByLabelText(/Password/i).type('abc123')
-  cy.findByRole('button', {name: /login/i}).click()
+  cy.findByLabelText('Username')
+    .type('Carter')
+
+  cy.findByLabelText(/Password/i)
+    .type('abc123')
+
+  cy.findByRole('button', {name: /login/i})
+    .click()
 })
 ```
 
