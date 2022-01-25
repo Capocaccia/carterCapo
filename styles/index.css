@@ -35,3 +35,7 @@ a::before {
 a:hover::before {
   transform: scaleX(1);
 }
+
+.min-w-fit {
+  min-width: fit-content;
+}

@@ -74,13 +74,14 @@ Success! Now we know which components we can expect to be on the page. Lets' sta
 // ./cypress/partials/alert.js
 
 export const alertText = () => {
-  // Find all of the elements with a matching test id and loop over them
+  // Find all of the elements with a matching test id
+  // loop over results
   cy.findAllByTestId("alertContainer").each(($alertItem) => {
     // in each individual item do the following
     cy.wrap($alertItem)
       .srollIntoView()
       .within(() => {
-        // lets get the h3 inside of the alert item
+        // Get the h3 inside of the alert item
         // make sure its not empty
         // and make sure its visible
         //
@@ -123,17 +124,16 @@ it("Generates a layout based test from CMS data", () => {
     },
   }).then((result) => {
     cy.visit("/").then(() => {
-      // get the component names from the API response
+      // get the component names from the response
       const componentNames = result?.body?.data?.page?.components.map(
         (comp) => comp.type
       );
-      // strip out the duplicates. Our tests look for all components of a type.
+      // strip out the duplicates. 
+      // Our tests look for all components of a type.
       const components = [...new Set(componentNames)];
       // for each component name, run the test!
       components.forEach((component) => {
         cy.log(`running test for ${component}`);
-        // the "component" in this loop is a string so we can't call it directly.
-        // This is why we use the component map to call it as an objects value
         componentMap[component]();
       });
     });

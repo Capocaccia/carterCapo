@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
             }}
           />
         </Head>
-        <body>
+        <body className="min-w-fit">
           <Main />
           <NextScript />
         </body>
