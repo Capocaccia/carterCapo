@@ -20,7 +20,7 @@ jobs:
   runCypress:
     runs-on: ubuntu-latest
     container: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-    needs: waitFor200
+    needs: getPreviewUrl
     steps: 
     - name: Run Cypress Against Preview
       uses: actions/checkout@v3
