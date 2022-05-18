@@ -19,7 +19,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
       - run: echo "::set-output name=previewUrl::steps.waitFor200.outputs.url"
-      - run: echo ${{steps.waitFor200.outputs}}
+      - run: echo ${{join(steps.waitFor200.outputs.*, '\n')}}
         shell: bash
   runCypress:
     runs-on: ubuntu-latest
