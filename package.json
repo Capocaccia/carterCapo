@@ -7,7 +7,7 @@
     "test": "jest",
     "e2e:run": "cypress run",
     "e2e:open": "cypress open",
-    "e2e:ci": "npx cypress run --env CYPRESS_BASE_URL=${PREVIEW_URL}",
+    "e2e:ci": "npx cypress run --env CYPRESS_BASE_URL=${PREVIEW_URL} --record --key ${CYPRESS_RECORD_KEY}",
     "typecheck": "tsc"
   },
   "dependencies": {
