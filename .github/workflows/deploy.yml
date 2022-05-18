@@ -25,6 +25,7 @@ jobs:
     - name: Run Cypress Against Preview
       uses: actions/checkout@v3
     - run: export PREVIEW_URL=${{steps.waitFor200.outputs.url}}
+    - run: export CYPRESS_RECORD_KEY=${{secrets.GITHUB_TOKEN}}
     - run: yarn e2e:ci
 
 
