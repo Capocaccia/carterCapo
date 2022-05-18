@@ -18,6 +18,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
+      - run: echo "::set-output name=previewUrl::steps.waitFor200.outputs.url"
   runCypress:
     runs-on: ubuntu-latest
     container: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
