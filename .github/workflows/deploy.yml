@@ -8,12 +8,13 @@ on:
 jobs:
   getPreviewUrl:
     runs-on: ubuntu-latest
+    container: node:16.12.0-buster
     steps:
       - name: Waiting for 200 from the Vercel Preview
         uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
         id: waitFor200
-      - run: echo ${{needs.getPreviewUrl.outputs.url}}
-      - run: echo ${{needs.getPreviewUrl.outputs.url}}
+      - run: echo ${{steps.getPreviewUrl.outputs.url}}
+      - run: echo ${{steps.waitFor200.outputs.url}}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
