@@ -6,31 +6,20 @@ on:
     branches: master
 
 jobs:
-  getPreviewUrl:
-    runs-on: ubuntu-latest
-    outputs:
-      output1: ${{steps.step1.outputs.previewUrl}}
+  capture_vercel_preview_url:
+    name: Capture Vercel preview URL
+    runs-on: "ubuntu-latest"
     steps:
-      - name: Waiting for 200 from the Vercel Preview
-        uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
-        id: waitFor200
+      - name: Get Preview Url
+      - uses: aaimio/vercel-preview-url-action@v1
+        id: vercel_preview_url
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          max_timeout: 60
-      - run: echo "::set-output name=previewUrl::${{steps.waitFor200.outputs.url}}"
-
-  runCypress:
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-    needs: getPreviewUrl
-    steps: 
-    - name: Run Cypress Against Preview
-      uses: actions/checkout@v3
-    - run: echo ${{needs.getPreviewUrl.outputs.output1}}
-    - run: echo ${{needs.getPreviewUrl.outputs.url}}
-    - run: yarn e2e:ci
-      env: 
-        CYPRESS_RECORD_KEY: ${{secrets.GITHUB_TOKEN}}
-        PREVIEW_URL: ${{needs.getPreviewUrl.outputs.output1}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        env: 
+          CYPRESS_RECORD_KEY: ${{secrets.GITHUB_TOKEN}}
+          PREVIEW_URL: ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
+      
 
 
