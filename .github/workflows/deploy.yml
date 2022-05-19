@@ -1,26 +1,33 @@
-name: Cypress run
+name: Cypress Tests
 
 on:
   pull_request:
-    branches:
-      - master
-
-  workflow_dispatch:
+  push:
+    branches: master
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-latest
+  runTestsAgainstPreview:
+    name: Run Tests Against Preview URL
+    runs-on: "ubuntu-latest"
     steps:
+      - name: Capture Vercel preview URL
+        id: waitFor200
+        uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 60
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
+      - name: Run Cypress
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build
-          start: npm start
           record: true
+          parallel: true
+          ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
+          config: baseUrl=${{steps.waitFor200.outputs.url}}
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+
+
