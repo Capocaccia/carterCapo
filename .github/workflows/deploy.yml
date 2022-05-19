@@ -22,7 +22,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - run: echo ${{steps.waitFor200.outputs.url}}
-      - run: env
       - name: Run Cypress
         uses: cypress-io/github-action@v2
         with:
@@ -31,6 +30,7 @@ jobs:
           parallel: true
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
           config: baseUrl=${{env.PREVIEW_URL}}
+      - run: env
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
