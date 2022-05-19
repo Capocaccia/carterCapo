@@ -16,6 +16,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
+        env:
+          PREVIEW_URL: ${{steps.waitFor200.outputs.url}}
       - run: echo ${{steps.waitFor200.outputs.url}}
       - name: Checkout
         uses: actions/checkout@v2
@@ -27,7 +29,7 @@ jobs:
           record: true
           parallel: true
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
-          config: baseUrl=${{steps.waitFor200.outputs.url}}
+          config: baseUrl=${{env.PREVIEW_URL}}
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
