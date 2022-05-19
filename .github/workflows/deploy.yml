@@ -6,15 +6,16 @@ on:
     branches: master
 
 jobs:
-  capture_vercel_preview_url:
+  runTestsAgainstPreview:
     name: Capture Vercel preview URL
     runs-on: "ubuntu-latest"
     steps:
       - name: Capture Vercel preview URL
-        id: vercel_preview_url
-        uses: aaron-binary/vercel-preview-url-action@v0.0.3
+        id: waitFor200
+        uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 60
       - name: Run Cypress
         uses: cypress-io/github-action@v2
         with:
@@ -22,7 +23,7 @@ jobs:
           record: true
           parallel: true
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
-          config: baseUrl=${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
+          config: baseUrl=${{steps.waitFor200.outputs.url}}
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
