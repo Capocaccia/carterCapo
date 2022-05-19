@@ -8,7 +8,6 @@ on:
 jobs:
   getPreviewUrl:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
     outputs:
       output1: ${{steps.step1.outputs.previewUrl}}
     steps:
