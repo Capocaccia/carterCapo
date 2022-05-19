@@ -35,11 +35,15 @@ jobs:
           labels: automerge
         if: ${{ steps.runCypress.outcome == 'success' }}
       - name: automerge
+        
+  autoMerge:
+    name: "Auto Merge"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Attempt Auto Merge
         id: automerge
         uses: "pascalgn/automerge-action@v0.15.3"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_RETRIES: 10
           MERGE_RETRY_SLEEP: 10000
-        if: ${{ steps.runCypress.outcome == 'success' }}
-
