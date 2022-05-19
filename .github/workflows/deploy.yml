@@ -29,13 +29,15 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ steps.runCypress.outcome == 'success' }}
       - name: Add Label
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: automerge
+        if: ${{ steps.runCypress.outcome == 'success' }}
       - name: automerge
         id: automerge
         uses: "pascalgn/automerge-action@v0.15.3"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        if: ${{ steps.runCypress.outcome == 'success' }}
+
