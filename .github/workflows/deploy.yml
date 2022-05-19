@@ -34,7 +34,7 @@ jobs:
         with:
           labels: automerge
         if: ${{ steps.runCypress.outcome == 'success' }}
-      - name: automerge
+
   automerge:
     runs-on: ubuntu-latest
     steps:
