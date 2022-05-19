@@ -32,5 +32,9 @@ context("Capocaccia.dev", () => {
         cy.wrap(link).invoke("attr", "href").should("not.be.empty");
       });
     });
+
+    it("Is a failing test for debugging purposes", () => {
+      cy.get("h1").should("not.exist");
+    });
   });
 });
