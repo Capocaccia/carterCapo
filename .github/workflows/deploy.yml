@@ -37,6 +37,7 @@ jobs:
 
   automerge:
     runs-on: ubuntu-latest
+    needs: runTestsAgainstPreview
     steps:
       - id: automerge
         name: automerge
