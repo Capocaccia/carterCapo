@@ -37,10 +37,9 @@ jobs:
       - name: automerge
         id: automerge
         uses: "pascalgn/automerge-action@v0.15.3"
-        with: 
-          MERGE_RETRIES: 10
-          MERGE_RETRY_SLEEP: 10000
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_RETRIES: 10
+          MERGE_RETRY_SLEEP: 10000
         if: ${{ steps.runCypress.outcome == 'success' }}
 
