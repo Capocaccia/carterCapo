@@ -15,10 +15,10 @@ jobs:
       - name: Waiting for 200 from the Vercel Preview
         uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
         id: waitFor200
-      - run: echo "::set-output name=previewUrl::${{steps.waitFor200.outputs.url}}"
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
+      - run: echo "::set-output name=previewUrl::${{steps.waitFor200.outputs.url}}"
 
   runCypress:
     runs-on: ubuntu-latest
