@@ -7,7 +7,7 @@ on:
 
 jobs:
   runTestsAgainstPreview:
-    name: Capture Vercel preview URL
+    name: Run Tests Against Preview URL
     runs-on: "ubuntu-latest"
     steps:
       - name: Capture Vercel preview URL
@@ -16,6 +16,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Run Cypress
         uses: cypress-io/github-action@v2
         with:
