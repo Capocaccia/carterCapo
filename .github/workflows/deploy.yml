@@ -22,9 +22,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - run: echo ${{steps.waitFor200.outputs.url}}
+      - run: env
       - name: Run Cypress
         uses: cypress-io/github-action@v2
-      - run: env
         with:
           command: npm run e2e:ci
           record: true
