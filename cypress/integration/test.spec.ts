@@ -33,7 +33,7 @@ context("Capocaccia.dev", () => {
       });
     });
 
-    it("Is a failing test for debugging purposes", () => {
+    it.skip("Is a failing test for debugging purposes", () => {
       cy.get("h1").should("not.exist");
     });
   });
