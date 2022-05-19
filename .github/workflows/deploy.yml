@@ -10,16 +10,22 @@ jobs:
     name: Capture Vercel preview URL
     runs-on: "ubuntu-latest"
     steps:
-      - name: Get Preview Url
-        uses: aaimio/vercel-preview-url-action@v1
+      - name: Capture Vercel preview URL
         id: vercel_preview_url
+        uses: aaron-binary/vercel-preview-url-action@v0.0.3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Cypress run
+      - name: Run Cypress
         uses: cypress-io/github-action@v2
-        env: 
-          CYPRESS_RECORD_KEY: ${{secrets.GITHUB_TOKEN}}
-          PREVIEW_URL: ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
+        with:
+          command: npm run e2e:ci
+          record: true
+          parallel: true
+          ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
+          config: baseUrl=${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
 
 
