@@ -16,18 +16,18 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
-        run: echo "${{steps.waitFor200.outputs.url}}"
+      - run: echo ${{steps.waitFor200.outputs.url}}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Cypress
         uses: cypress-io/github-action@v2
-        run: echo "${{steps.waitFor200.outputs.url}}"
         with:
           command: npm run e2e:ci
           record: true
           parallel: true
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
           config: baseUrl=${{steps.waitFor200.outputs.url}}
+      - run: echo "${{steps.waitFor200.outputs.url}}"
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
