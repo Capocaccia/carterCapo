@@ -27,14 +27,17 @@ context("Capocaccia.dev", () => {
       cy.location("href").should("include", "#footer");
     });
 
-    it("All links should have HREF populated", () => {
+    it("All links should have HREF that returns a 200", () => {
       cy.get("a").each((link) => {
-        cy.wrap(link).invoke("attr", "href").should("not.be.empty");
+        cy.wrap(link)
+          .invoke("attr", "href")
+          .then((href) => {
+            if (!href?.includes("linkedin"))
+              cy.request(href).then((resp) => {
+                expect(resp.status).to.eq(200);
+              });
+          });
       });
-    });
-
-    it.skip("Is a failing test for debugging purposes", () => {
-      cy.get("h1").should("not.exist");
     });
   });
 });
