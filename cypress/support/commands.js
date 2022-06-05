@@ -24,3 +24,16 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import '@testing-library/cypress/add-commands';
+
+Cypress.Commands.add('checkAllHrefFor200', () => {
+    cy.get("a").each((link) => {
+        cy.wrap(link)
+          .invoke("attr", "href")
+          .then((href) => {
+            if (!href?.includes("linkedin"))
+              cy.request(href).then((resp) => {
+                expect(resp.status).to.eq(200);
+              });
+          });
+      });
+})
