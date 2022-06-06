@@ -20,3 +20,7 @@
 .markdown li {
   list-style-type: square;
 }
+
+.markdown a {
+  font-weight: bold;
+}
