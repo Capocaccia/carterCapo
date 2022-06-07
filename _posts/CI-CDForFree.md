@@ -1,6 +1,6 @@
 ---
 title: "CI/CD For Free!"
-excerpt: "In this post set up an entire CI/CD pipeline complete with automated quality checks, dashboard reporting, preview environments and preview environments for 100% free! See how I used open source tools to accomplish this goal!"
+excerpt: "In this post set up an entire CI/CD pipeline complete with automated quality checks, dashboard reporting and preview environments for 100% free! See how I used open source tools to accomplish this goal!"
 coverImage: "/assets/blog/ciCdForFree/ciCdForFree.jpeg"
 date: "2022-06-04T05:35:07.322Z"
 author:
