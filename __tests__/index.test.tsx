@@ -44,7 +44,7 @@
         })
 
         //does the page masthead render with correct content
-        expect(screen.getByText('Husband. Father. Developer. Senior QE Automation Manager @ Hilton.')).toBeInTheDocument()
+        expect(screen.getByText('Husband. Father. Developer. Cypress.io Ambassador.')).toBeInTheDocument()
         expect(screen.getByText('Carter Capocaccia.')).toBeInTheDocument()
 
         //does the hero post render with expected content
