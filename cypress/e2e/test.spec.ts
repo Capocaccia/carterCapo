@@ -34,7 +34,7 @@ context("Capocaccia.dev", () => {
 
     it("Clicks on the Contact link", () => {
       cy.findByText("Contact").click();
-      cy.location("href").should("include", "#footer");
+      cy.location("href").should("include", "contact");
     });
 
     it("All links should have HREF that returns a 200", () => {
