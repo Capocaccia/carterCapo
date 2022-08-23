@@ -16,7 +16,7 @@ const Footer = () => {
               carter.capocaccia@gmail.com
             </a>
             <a
-              href="https://www.linkedin.com/in/capocaccia/"
+              href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=capocaccia"
               target="_blank"
               rel="noreferrer"
               className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
