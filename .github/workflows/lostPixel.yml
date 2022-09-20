@@ -15,7 +15,7 @@ jobs:
           cache: "yarn"
 
       - name: Install dependencies
-        run: yarn i
+        run: yarn
 
       - name: Build Next app
         run: yarn run build
