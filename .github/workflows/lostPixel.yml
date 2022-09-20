@@ -12,16 +12,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: "npm"
+          cache: "yarn"
 
       - name: Install dependencies
-        run: npm i
+        run: yarn i
 
       - name: Build Next app
-        run: npm run build
+        run: yarn run build
 
       - name: Run Next app
-        run: npm run start &
+        run: yarn run start &
 
       - name: Lost Pixel
         uses: lost-pixel/lost-pixel@v2.15.0
