@@ -10,6 +10,7 @@ jobs:
     name: Visual Regression Testing
     runs-on: "ubuntu-latest"
     steps:
+    
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node
@@ -25,6 +26,11 @@ jobs:
         run: yarn run start &
       - name: Lost Pixel
         uses: lost-pixel/lost-pixel@v2.15.0
+      - name: Lost Pixel Artifact Generation
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          path: .lostpixel
 
   runTestsAgainstPreview:
     name: Run Tests Against Preview URL

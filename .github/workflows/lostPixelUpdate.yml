@@ -1,3 +1,5 @@
+name: Update Lost Pixel Baseline Images
+
 on: workflow_dispatch
 
 jobs:
