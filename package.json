@@ -7,7 +7,9 @@
     "test": "jest",
     "e2e:run": "cypress run",
     "e2e:open": "cypress open",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lostPixel:update": "yarn lost-pixel update",
+    "lostPixel": "yarn lost-pixel"
   },
   "dependencies": {
     "classnames": "2.3.1",
