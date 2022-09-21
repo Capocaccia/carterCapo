@@ -24,8 +24,6 @@ Below is a list of a bunch of stuff that I frequently use in my life. None of th
 - [Google Chrome](https://www.google.com/chrome/)
 - [Better Touch Tool](https://folivora.ai/)
 - [Postman](https://www.postman.com/)
-- [MongoDB Compass](https://www.mongodb.com/products/compass)
-- [Firebase](https://firebase.google.com/)
 - [Spotify](https://www.spotify.com/us/)
 - [Cypress](https://www.cypress.io/)
 - [Cypress Testing Library](https://testing-library.com/docs/cypress-testing-library/intro)
@@ -33,13 +31,12 @@ Below is a list of a bunch of stuff that I frequently use in my life. None of th
 
 ## Other
 
-- [Google Pixel 6](https://store.google.com/product/pixel_6?hl=en-US)
+- [iPhone 13 Pro](https://www.apple.com/am/iphone-13-pro/)
 - [Pixel Buds Series A](https://store.google.com/product/pixel_buds_a_series?hl=en-US)
 - [Sharpie S-Gel 0.7](https://www.amazon.com/Sharpie-S-Gel-Medium-Point-0-7mm/dp/B082PMRSBK)
 - [Appointed Notebook w/ Dot Grid Paper](https://appointed.co/collections/notebooks-journals/products/dot-grid-workbook)
 - [The Noun Project](https://thenounproject.com/)
 - [RayBan 6238](https://www.ray-ban.com/usa/eyeglasses/RX6238%20MALE%20003-rb6238-negro/713132447505)
-- [Levi 514](https://www.levi.com/US/en_US/clothing/men/jeans/514-straight-fit-mens-jeans/p/005140831)
 - [Hoka Bondi 7](https://www.hoka.com/en/us/mens-road/bondi-7/1110518.html)
 
 ## Education
@@ -52,7 +49,7 @@ Below is a list of a bunch of stuff that I frequently use in my life. None of th
 
 ## Podcasts
 
-- [Airmchair Expert](https://armchairexpertpod.com/)
+- [Armchair Expert](https://armchairexpertpod.com/)
 - [How I Built This](https://www.npr.org/podcasts/510313/how-i-built-this)
-- [Waveform](hhttps://open.spotify.com/show/6o81QuW22s5m2nfcXWjucc)
-- [The WAN Show](https://open.spotify.com/show/5l8IBkxX6pgPPfEL6AI57O)
+- [Business Wars](https://open.spotify.com/show/6RbJUsaOaboqSBqQUfdQtR)
+- [American Scandal](https://open.spotify.com/show/4sUfdePkKVTU0tciTetaau)
