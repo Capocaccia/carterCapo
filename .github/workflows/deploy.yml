@@ -57,7 +57,7 @@ jobs:
 
   automerge:
     runs-on: ubuntu-latest
-    needs: runTestsAgainstPreview
+    needs: [lostPixel, runTestsAgainstPreview]
     steps:
       - id: automerge
         name: automerge
