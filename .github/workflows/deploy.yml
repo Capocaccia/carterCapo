@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Quality & Deploy
 
 on:
   pull_request:
