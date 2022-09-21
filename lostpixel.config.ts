@@ -8,8 +8,11 @@ export const config: CustomProjectConfig = {
     ],
     pageUrl: "http://127.0.0.1:3000",
   },
-  generateOnly: true,
   failOnDifference: true,
+  generateOnly: true,
   waitBeforeScreenshot: 3000,
   threshold: 0.3,
+  timeouts: {
+    loadState: 50000,
+  },
 };
