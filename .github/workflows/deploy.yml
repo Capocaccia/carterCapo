@@ -27,6 +27,7 @@ jobs:
       - name: Lost Pixel
         uses: lost-pixel/lost-pixel@v2.15.0
       - name: Lost Pixel Artifact Generation
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           path: .lostpixel
