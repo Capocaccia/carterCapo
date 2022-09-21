@@ -6,7 +6,7 @@ export const config: CustomProjectConfig = {
       { id: "capocaccia.dev/posts/uses", path: "/posts/uses", name: "Uses" },
       { id: "capocaccia.dev/", path: "/", name: "Home" },
     ],
-    pageUrl: "http://127.0.0.1:3000",
+    pageUrl: "http://172.17.0.1:3000",
   },
   failOnDifference: true,
   generateOnly: true,
