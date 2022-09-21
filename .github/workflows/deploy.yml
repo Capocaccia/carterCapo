@@ -28,7 +28,8 @@ jobs:
         uses: lost-pixel/lost-pixel@v2.15.0
       - name: Lost Pixel Artifact Generation
         uses: actions/upload-artifact@v3
-        path: .lostpixel
+        with:
+          path: .lostpixel
 
   runTestsAgainstPreview:
     name: Run Tests Against Preview URL
