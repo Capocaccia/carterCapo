@@ -16,10 +16,10 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Build ladle
+      - name: Build Next
         run: yarn run build
 
-      - name: Serve ladle
+      - name: Serve Next
         run: yarn run start &
 
       - name: Lost Pixel
