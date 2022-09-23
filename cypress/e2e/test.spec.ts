@@ -1,5 +1,5 @@
 context("Capocaccia.dev", () => {
-  describe("a basic test", () => {
+  describe("Tests the landing page", () => {
     beforeEach(() => {
       cy.visit("/");
     });
@@ -35,6 +35,14 @@ context("Capocaccia.dev", () => {
     it("Clicks on the Contact link", () => {
       cy.findByText("Contact").click();
       cy.location("href").should("include", "footer");
+    });
+    it("All links should have HREF that returns a 200", () => {
+      cy.checkAllHrefFor200();
+    });
+  });
+  describe("Tests the Uses page", () => {
+    beforeEach(() => {
+      cy.visit("/posts/uses");
     });
 
     it("All links should have HREF that returns a 200", () => {

@@ -10,6 +10,5 @@ export const config: CustomProjectConfig = {
   },
   failOnDifference: true,
   generateOnly: true,
-  waitBeforeScreenshot: 3000,
   threshold: 0.1,
 };
