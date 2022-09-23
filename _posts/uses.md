@@ -16,7 +16,7 @@ Below is a list of a bunch of stuff that I frequently use in my life. None of th
 
 - [Logitech MX Master 2s](https://www.logitech.com/en-us/eol/mx-master-2s-mouse.910-005131.html)
 - [2019 13 inch MacBook Pro 2.4GHz Intel Core i5 w/ 16GB of Ram](https://www.apple.com/macbook-pro/)
-- [LG 34BL650-B LCD Monitor](https://www.lg.com/us/business/desktop-monitors/lg-34BL650-B)
+- [LG 34BL650-B LCD Monitor](https://www.lg.com/us/small-business/monitors/lg-34bl650-b)
 
 ## Software
 
