@@ -1,5 +1,6 @@
 name: 'Run Visual Regression Tests'
 description: 'Run Visual Regression Tests Against the UI Locally'
+runs-on: "ubuntu-latest"
 runs:
   using: "composite"
   steps:
