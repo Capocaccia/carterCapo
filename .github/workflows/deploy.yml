@@ -6,10 +6,10 @@ on:
 
 jobs:
   runVisualRegression:
-    uses: ./.github/workflows/runVisualRegression.yml
+    uses: ./actions/runVisualRegression.yml
 
   runUITests:
-    uses: ./.github/workflows/runUITests.yml
+    uses: ./actions/runUITests.yml
 
   automerge:
     runs-on: ubuntu-latest

@@ -1,7 +1,7 @@
-  on:
-    workflow_dispatch:
-  name: "Run Visual Regression"
-  runs-on: "ubuntu-latest"
+name: 'Run Visual Regression Tests'
+description: 'Run Visual Regression Tests Against the UI Locally'
+runs:
+  using: "composite"
   steps:
     - name: Checkout
       uses: actions/checkout@v2

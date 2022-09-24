@@ -1,7 +1,8 @@
-  on:
-    workflow_dispatch:
-  name: Run Tests Against Preview URL
-  runs-on: "ubuntu-latest"
+name: 'Run Tests Against Preview URL'
+description: 'Run UI Tests Against a Preview Environment'
+runs-on: "ubuntu-latest"
+runs:
+  using: "composite"
   steps:
     - name: Capture Vercel preview URL
       id: waitFor200
