@@ -1,3 +1,5 @@
+  on:
+    workflow_dispatch:
   name: "Run Visual Regression"
   runs-on: "ubuntu-latest"
   steps:

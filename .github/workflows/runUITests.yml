@@ -1,3 +1,5 @@
+  on:
+    workflow_dispatch:
   name: Run Tests Against Preview URL
   runs-on: "ubuntu-latest"
   steps:
