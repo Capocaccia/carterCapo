@@ -1,4 +1,4 @@
-name: "Run Visual Regression"
+  name: "Run Visual Regression"
   runs-on: "ubuntu-latest"
   steps:
     - name: Checkout
