@@ -1,10 +1,10 @@
 name: Run Visual Regression Tests
-runs-on: "ubuntu-latest"
 on:
   workflow_call:
 
 jobs:
   runVisualRegression:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
