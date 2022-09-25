@@ -1,6 +1,7 @@
 name: Run Visual Regression Tests
 on:
   workflow_call:
+  workflow_dispatch:
 
 jobs:
   runVisualRegression:
