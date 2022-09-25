@@ -18,3 +18,20 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+var isFailed = false;
+var failedTitle;
+
+Cypress.on('fail', (error, runnable) => {
+  
+  failedTitle = runnable.fullTitle();
+  isFailed = true
+
+  throw error
+})
+
+afterEach(function() {
+  if(isFailed){
+    cy.screenshot(`${failedTitle}`,{capture: "fullPage"})
+    isFailed = false
+  }
+})

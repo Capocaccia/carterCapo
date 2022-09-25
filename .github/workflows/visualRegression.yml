@@ -1,0 +1,28 @@
+name: Run Visual Regression Tests
+on:
+  workflow_call:
+
+jobs:
+  runVisualRegression:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn
+      - name: Build Next app
+        run: yarn run build
+      - name: Run Next app
+        run: yarn run start &
+      - name: Lost Pixel
+        uses: lost-pixel/lost-pixel@v2.15.0
+      - name: Lost Pixel Artifact Generation
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          path: .lostpixel
