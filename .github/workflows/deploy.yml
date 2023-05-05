@@ -7,7 +7,7 @@ on:
 jobs:
   unitTests:
     uses: ./.github/workflows/unitTests.yml
-    
+
   lostPixel: 
     uses: ./.github/workflows/visualRegression.yml
 
