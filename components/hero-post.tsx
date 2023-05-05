@@ -30,7 +30,7 @@ const HeroPost = ({
         <div>
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
             <Link as={`/posts/${slug}`} href="/posts/[slug]">
-              <a>{title}</a>
+              <a data-testid="hero-header">{title}</a>
             </Link>
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
