@@ -26,7 +26,7 @@ jobs:
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
           config: baseUrl=${{steps.waitFor200.outputs.url}}
         env:
-          CYPRESS_RECORD_KEY: ${{ env.CYPRESS_RECORD_KEY }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Add Label
         uses: actions-ecosystem/action-add-labels@v1
