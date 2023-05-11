@@ -15,7 +15,7 @@ Below is a list of a bunch of stuff that I frequently use in my life. None of th
 ## Hardware
 
 - [Logitech MX Master 2s](https://www.logitech.com/en-us/products/mice.html?filters=master-series)
-- [2019 13 inch MacBook Pro](https://www.apple.com/macbook-pro/)
+- [2021 14 inch M1 MacBook Pro](https://www.apple.com/macbook-pro/)
 - [LG 34BL650-B LCD Monitor](https://www.lg.com/us/small-business/monitors/lg-34bl650-b)
 
 ## Software
@@ -31,7 +31,7 @@ Below is a list of a bunch of stuff that I frequently use in my life. None of th
 ## Other
 
 - [iPhone 13 Pro](https://www.apple.com/am/iphone-13-pro/)
-- [Pixel Buds Series A](https://store.google.com/product/pixel_buds_a_series?hl=en-US)
+- [AirPods Pro 2](https://www.apple.com/airpods-pro/)
 - [Sharpie S-Gel 0.7](https://www.amazon.com/Sharpie-S-Gel-Medium-Point-0-7mm/dp/B082PMRSBK)
 - [Appointed Notebook w/ Dot Grid Paper](https://appointed.co/collections/notebooks-journals/products/dot-grid-workbook)
 - [The Noun Project](https://thenounproject.com/)
