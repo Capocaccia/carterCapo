@@ -3,6 +3,7 @@ import '../styles/index.css'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import * as ga from '../lib/ga'
+import { Analytics } from '@vercel/analytics/react';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -21,5 +22,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
-  return <Component {...pageProps} />
+  return (
+    <>
+     <Component {...pageProps} />
+     <Analytics/>
+    </>
+  )
 }
