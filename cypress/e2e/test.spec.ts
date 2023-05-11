@@ -22,14 +22,15 @@ context("Capocaccia.dev", () => {
     });
 
     it("Clicks on more stories post", () => {
-      cy.findAllByTestId("post-preview").should("have.length.greaterThan", 0);
-      cy.findAllByTestId("post-preview")
-        .first()
-        .within(($container) => {
-          cy.wrap($container).get("a").first().click();
-          cy.location("pathname").should("not.eq", "/");
-          cy.get("404").should("not.exist");
-        });
+      cy.get("[data-testid='post-preview']").first().as('firstPost')
+      cy.get('@firstPost').should('be.visible')
+      cy.get('@firstPost').within(() => {
+        cy.get('h3').children('a').then(($a) => {
+          let href = $a.attr('href')
+          cy.wrap($a).click()
+          cy.location('pathname').should('eq', href)
+        })
+      })
     });
 
     it("Clicks on the Contact link", () => {
