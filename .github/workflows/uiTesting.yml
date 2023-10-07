@@ -1,6 +1,6 @@
 name: Run UI Tests
 
-on: 
+on:
   workflow_call:
   workflow_dispatch:
 env:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Capture Vercel preview URL
         id: waitFor200
-        uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
+        uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
@@ -23,7 +23,7 @@ jobs:
         with:
           record: true
           parallel: true
-          ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
+          ci-build-id: "${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}"
           config: baseUrl=${{steps.waitFor200.outputs.url}}
         env:
           CYPRESS_RECORD_KEY: ${{ env.CYPRESS_RECORD_KEY }}
