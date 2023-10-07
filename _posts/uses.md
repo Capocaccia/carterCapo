@@ -42,7 +42,7 @@ Below is a list of a bunch of stuff that I frequently use in my life. None of th
 - [Kent Dodds](https://kentcdodds.com/courses)
 - [Codewars](https://www.codewars.com/)
 - [Javascript Weekly](https://javascriptweekly.com/)
-- [Test Automation Weekly](https://www.testautomationweekly.com/)
+- [Software Testing Weekyl](https://softwaretestingweekly.com/)
 
 ## Podcasts
 
