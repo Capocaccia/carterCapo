@@ -29,7 +29,8 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ env.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Add Label
-        uses: actions-ecosystem/action-add-labels@v1
+        uses: actions-ecosystem/action-add-labels@v1.1.0
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: automerge
         if: ${{ steps.runCypress.outcome == 'success' && github.ref != 'refs/heads/master' }}
