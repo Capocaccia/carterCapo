@@ -14,7 +14,7 @@ jobs:
         uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          max_timeout: 60
+          max_timeout: 180
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Cypress
