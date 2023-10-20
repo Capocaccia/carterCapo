@@ -8,8 +8,6 @@ env:
 jobs:
   runUITesting:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
       - name: Capture Vercel preview URL
         id: waitFor200
