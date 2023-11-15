@@ -5,7 +5,7 @@ const Intro = () => {
         Carter Capocaccia.
       </h1>
       <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        Husband. Father. Developer. Cypress.io Ambassador.
+        Husband. Father. Developer.
       </h4>
     </section>
   )
