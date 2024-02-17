@@ -1,7 +1,7 @@
 ---
 title: "CI/CD Is Easier Than You Think"
 excerpt: "Using Cypress and Github Actions to Build an Automation Platform. Its easier than you think."
-coverImage: "/assets/blog/ciCd/quality.jpeg"
+coverImage: "/assets/blog/ciCdisEasy/ciCdIsEasy.jpg"
 date: "2024-02-17T05:35:07.322Z"
 author:
   name: Carter Capocaccia
