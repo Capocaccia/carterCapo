@@ -3,8 +3,7 @@ name: Run UI Tests
 on:
   workflow_call:
   workflow_dispatch:
-env:
-  CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+  pull_request:
 jobs:
   runUITesting:
     runs-on: ubuntu-latest
