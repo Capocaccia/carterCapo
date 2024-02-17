@@ -3,7 +3,7 @@ name: Run UI Tests
 on:
   workflow_call:
   workflow_dispatch:
-  pull_request:
+  pull_request_target:
 jobs:
   runUITesting:
     runs-on: ubuntu-latest
