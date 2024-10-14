@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Capture Vercel preview URL
         id: waitFor200
-        uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
+        uses: patrickedqvist/wait-for-vercel-preview@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 180
@@ -27,7 +27,7 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Add Label
-        uses: actions-ecosystem/action-add-labels@v1.1.0
+        uses: actions-ecosystem/action-add-labels@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: automerge
