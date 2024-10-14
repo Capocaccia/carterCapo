@@ -63,7 +63,7 @@ Awesome! We are now waiting for Vercel to deploy and active preview URL before c
 Onwards towards automated testing. First, our app contains Cypress and not the container the workflow is running against. So we need to check out our app. Using the [Checkout action](https://github.com/actions/checkout), we can check-out our app.
 
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
 Our app is checked out and it has Cypress as a dependency. Lets run some tests. [Cypress provides a ready to use action as well](https://github.com/cypress-io/github-action)!
 
