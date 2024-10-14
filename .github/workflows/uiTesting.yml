@@ -13,9 +13,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 180
-      - name: Install Yarn
-        run: |
-          npm install -g yarn@3.8.1
+      - name: Enable Corepack
+        run: corepack enable
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run Cypress
