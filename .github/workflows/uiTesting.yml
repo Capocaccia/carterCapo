@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Capture Vercel preview URL
         id: waitFor200
-        uses: patrickedqvist/wait-for-vercel-preview@v1
+        uses: patrickedqvist/wait-for-vercel-preview@v1.3.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 180
