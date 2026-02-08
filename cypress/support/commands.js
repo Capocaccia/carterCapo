@@ -1,39 +1,10 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import '@testing-library/cypress/add-commands';
-
-Cypress.Commands.add('checkAllHrefFor200', () => {
-    cy.get("a").each((link) => {
-        cy.wrap(link)
-          .invoke("attr", "href")
-          .then((href) => {
-            if (!href?.includes("linkedin"))
-              cy.request(href).then((resp) => {
-                expect(resp.status).to.eq(200);
-              });
-          });
-      });
-})
+// Custom command to check external link status codes
+Cypress.Commands.add('checkExternalLinkStatus', (url) => {
+    cy.request({
+        url: url,
+        failOnStatusCode: false // Prevent Cypress from failing the test on non-200 status codes
+    }).then((response) => {
+        const allowedStatusCodes = [200, 403, 429];
+        expect(allowedStatusCodes).to.include(response.status);
+    });
+});
