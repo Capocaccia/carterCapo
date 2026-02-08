@@ -1,10 +1,10 @@
-// Custom command to check external link status codes
-Cypress.Commands.add('checkExternalLinkStatus', (url) => {
+Cypress.Commands.add('checkAllHrefFor200', () => {
+  cy.get('a').each((link) => {
     cy.request({
-        url: url,
-        failOnStatusCode: false // Prevent Cypress from failing the test on non-200 status codes
+      url: link.prop('href'),
+      failOnStatusCode: false
     }).then((response) => {
-        const allowedStatusCodes = [200, 403, 429];
-        expect(allowedStatusCodes).to.include(response.status);
+      expect([200, 403, 429]).to.include(response.status);
     });
+  });
 });
